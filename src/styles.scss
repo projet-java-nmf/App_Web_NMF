@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Nanum-Regular';
+    src: url('../src/assets/fonts/Nanum_Gothic/NanumGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Nanum-Bold';
+    src: url('../src/assets/fonts/Nanum_Gothic/NanumGothic-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Nanum-ExtraBold';
+    src:url('../src/assets/fonts/Nanum_Gothic/NanumGothic-ExtraBold.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Nanum-Regular', sans-serif;
+    margin: 100px;
+    padding: 0;
+}

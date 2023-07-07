@@ -1,0 +1,16 @@
+<form [formGroup]="emailConfirmForm" (ngSubmit)="onSubmit()" class="w-50 mx-auto">
+    <h4 class="mb-5 text-success">Email confirmation</h4>
+    <p>Veuillez renseigner le code que vous avez reçu sur : {{email}}</p>
+    <div *ngIf="confirmMsg" class="alert alert-success">{{confirmMsg}}</div>
+    <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+    <div class="mb-3">
+        <label for="">Code</label>
+        <input formControlName="code" type="text" class="form-control">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">
+        Envoyer
+    </button>
+
+    
+</form>

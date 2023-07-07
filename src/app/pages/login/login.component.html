@@ -1,0 +1,21 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-50 mx-auto">
+    <h4 class="mb-5 text-success">Login</h4>
+    <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+    <div class="mb-3">
+        <label for="">Email</label>
+        <input formControlName="email" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="">Mot de passe</label>
+        <input formControlName="password" type="password" name="" id="" class="form-control">
+    </div>
+    <div class = "mb-3">
+        <a routerLink="/forgotten-password">Mot de passe oublié !</a>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Envoyer
+    </button>
+
+    
+</form>

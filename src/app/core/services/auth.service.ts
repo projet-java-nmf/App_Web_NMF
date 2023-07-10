@@ -12,6 +12,37 @@ export class AuthService {
     private http : HttpClient
   ) { }
 
+  setJwt (jwt : string){
+    localStorage.setItem("jwt", jwt)
+  }
+
+  getJwt (){
+    return localStorage.getItem("jwt") || ''
+  }
+
+  setEmail (email : string){
+    localStorage.setItem("email", email);
+  }
+
+  getEmail(){
+    return localStorage.getItem("email") || ''
+  }
+
+  setRoles (roles : string){
+    localStorage.setItem ("roles", roles)
+  }
+
+  getRoles (){
+    return localStorage.getItem("roles")
+  }
+
+  logout (){
+    localStorage.removeItem('jwt');
+    localStorage.removeItem('email');
+    localStorage.removeItem('roles');
+  }
+
+
   url = environment.apiUrl;
 
   login (body : any) : Observable<HttpResponse<any>>{
@@ -47,6 +78,10 @@ export class AuthService {
       this.url+"auth/reset-password",
       body
     )
+  }
+
+  getUsers () : Observable<any>{
+    return this.http.get(this.url+"users")
   }
 
 }

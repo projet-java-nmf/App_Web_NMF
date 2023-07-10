@@ -1,1 +1,11 @@
-<p>home works!</p>
+<p>welcome {{email}}</p>
+<div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+
+
+<div *ngFor = "let user of users">
+    <p>{{user.email}}</p>
+</div>
+
+<button class="btn btn-danger" (click)="logout()">
+    déconnexion
+</button>

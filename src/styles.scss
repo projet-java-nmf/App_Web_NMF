@@ -1,19 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+// @font-face {
+//     font-family: 'Nanum-Regular';
+//     src: url('../src/assets/fonts/Nanum_Gothic/NanumGothic-Regular.ttf') format('truetype');
+// }
+// @font-face {
+//     font-family: 'Nanum-Bold';
+//     src: url('../src/assets/fonts/Nanum_Gothic/NanumGothic-Bold.ttf') format('truetype');
+// }
+// @font-face {
+//     font-family: 'Nanum-ExtraBold';
+//     src:url('../src/assets/fonts/Nanum_Gothic/NanumGothic-ExtraBold.ttf') format('truetype');
+// }
 @font-face {
-    font-family: 'Nanum-Regular';
-    src: url('../src/assets/fonts/Nanum_Gothic/NanumGothic-Regular.ttf') format('truetype');
+    font-family: 'Dots-Regular';
+    src: url('../src/assets/fonts/Raleway_Dots/RalewayDots-Regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Nanum-Bold';
-    src: url('../src/assets/fonts/Nanum_Gothic/NanumGothic-Bold.ttf') format('truetype');
+    font-family: 'Raleway-Regular';
+    src: url('../src/assets/fonts/Raleway/static/Raleway-Regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Nanum-ExtraBold';
-    src:url('../src/assets/fonts/Nanum_Gothic/NanumGothic-ExtraBold.ttf') format('truetype');
+    font-family: 'Raleway-VariableFont_wght';
+    src:url('../src/assets/fonts/Raleway/Raleway-VariableFont_wght.ttf') format('truetype');
+}
+
+.color-graphic-charter{
+    color: #4A8251;
+    color: #5CBA86;
+    color: #D5DDBC;
+    color: #dde4d7;
+    color: #FFFBFA;
+    color: #FFFFFF;
 }
 
 body {
-    font-family: 'Nanum-Regular', sans-serif;
+    font-family: 'Raleway-VariableFont_wght', sans-serif;
     margin: 100px;
     padding: 0;
 }

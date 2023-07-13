@@ -13,6 +13,8 @@ import { ResetPasswordRequestComponent } from './pages/reset-password-request/re
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { EmailConfirmationComponent } from './pages/email-confirmation/email-confirmation.component';
 import { JwtInterceptorInterceptor } from './core/interceptors/jwt-interceptor.interceptor';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { JwtInterceptorInterceptor } from './core/interceptors/jwt-interceptor.i
     HomeComponent,
     ResetPasswordRequestComponent,
     ResetPasswordComponent,
-    EmailConfirmationComponent
+    EmailConfirmationComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

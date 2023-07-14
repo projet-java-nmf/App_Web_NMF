@@ -1,0 +1,38 @@
+a {
+    color: rgb(83, 80, 80);
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.no-list {
+    border: 1px solid black;
+}
+    .no-list button  {
+        border: 1px solid black;
+    }
+
+.main-box {
+    border: 1px solid black;
+    margin: 0px auto;
+}
+
+.box-video-card {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    border: 1px solid black;
+    min-width: 20vw;
+    min-height: 30vh;
+}
+    .video-card {
+        border: 1px solid black;
+        background-color: rgb(73, 73, 73);
+        min-width: 20vw;
+        min-height: 30vh;
+    }
+    .box-video-card button {
+        width: 100px;
+        height: 30px;
+        border: 1px solid black;
+    }
+

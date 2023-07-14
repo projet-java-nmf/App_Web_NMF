@@ -1,0 +1,20 @@
+section {
+    // gap: 20px;
+    row-gap: 20px;
+}
+
+a {
+    color: rgb(83, 80, 80);
+    font-weight: 300;
+    text-decoration: none;
+}
+
+form {
+    border: 1px solid black;
+    min-width: 35vw;
+    min-height: 30vh;
+}
+    input{
+        min-width: 80%;
+
+    }

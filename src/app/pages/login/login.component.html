@@ -1,21 +1,32 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-50 mx-auto">
-    <h4 class="mb-5 text-success">Login</h4>
-    <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
-    <div class="mb-3">
-        <label for="">Email</label>
-        <input formControlName="email" type="text" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label for="">Mot de passe</label>
-        <input formControlName="password" type="password" name="" id="" class="form-control">
-    </div>
-    <div class = "mb-3">
-        <a routerLink="/forgotten-password">Mot de passe oublié !</a>
-    </div>
+<section class="m-5 d-flex">
 
-    <button type="submit" class="btn btn-primary">
-        Envoyer
-    </button>
-
+    <div class="d-flex gap-5 mx-auto">
+        <div class="login-form p-3">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-75 p-4 mx-auto">
+                <h2 class="mb-3">Déjà Yogi Monkey ?</h2>
+                <p>Connectez-vous ici pour poursuivre votre expérience sur Daily Yogi !</p>
+                <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+                <div class="mb-3">
+                    <label for="">Email</label>
+                    <input formControlName="email" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Mot de passe</label>
+                    <input formControlName="password" type="password" name="" id="" class="form-control">
+                </div>
+                <div class = "mb-3">
+                    <a routerLink="/forgotten-password">Mot de passe oublié !</a>
+                </div>
+                <a routerLink="/user-session"><button type="" class="btn btn-primary">Se connecter</button></a>
+            </form>
+        </div>
     
-</form>
+        <div class="p-5 card2 d-flex flex-column justify-content-center">
+            <h2>Nouveau Yogi Monkey ?</h2>
+            <p>Pour conserver vos vidéos favoris, vous pouvez compter sur votre compte !</p>
+            <a routerLink="/register"><button type="" class="btn btn-primary btn2">Créer mon compte</button></a>
+
+        </div>
+    </div>
+
+</section>

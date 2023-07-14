@@ -1,0 +1,31 @@
+.sidebar {
+    // display: flex;
+    // flex-direction: column;
+    border: 1px solid black;
+    min-width: 25%;
+    min-height: 70vh;
+
+}
+
+ul {
+    gap: 20px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: rgb(83, 80, 80);
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.test {
+    border: 1px solid black;
+    width: 50vw;
+    height: 70vh;
+    margin-left: 100px;
+}
+

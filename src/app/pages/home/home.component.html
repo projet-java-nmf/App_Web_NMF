@@ -1,11 +1,13 @@
-<p>welcome {{email}}</p>
-<div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+<section class="p-5">
 
+    <p>Bonjour "prénom user" {{email}}</p>
+    <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+    
+    <div *ngFor = "let user of users">
+        <p>{{user.email}}</p>
+    </div>
+    
+    <!-- <button class="btn btn-danger" (click)="logout()">déconnexion</button> -->
 
-<div *ngFor = "let user of users">
-    <p>{{user.email}}</p>
-</div>
+</section>
 
-<button class="btn btn-danger" (click)="logout()">
-    déconnexion
-</button>

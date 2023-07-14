@@ -1,0 +1,13 @@
+form {
+    min-height: 50vh;
+    justify-content: center;
+    padding: 0 10%;
+    background-color: rgb(241, 241, 241);
+}
+
+form div:nth-child(1) {
+    // border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+

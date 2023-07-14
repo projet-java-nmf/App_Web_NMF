@@ -8,16 +8,16 @@
                 <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
                 <div class="mb-3">
                     <label for="">Email</label>
-                    <input formControlName="email" type="text" class="form-control">
+                    <input formControlName="email" type="text" class="form-control" placeholder="test">
                 </div>
                 <div class="mb-3">
                     <label for="">Mot de passe</label>
-                    <input formControlName="password" type="password" name="" id="" class="form-control">
+                    <input formControlName="password" type="password" name="" id="" class="form-control" placeholder="test">
                 </div>
                 <div class = "mb-3">
                     <a routerLink="/forgotten-password">Mot de passe oublié !</a>
                 </div>
-                <a routerLink="/user-session"><button type="" class="btn btn-primary">Se connecter</button></a>
+                <a routerLink="/user-session"><button type="submit" class="btn btn-primary">Se connecter</button></a>
             </form>
         </div>
     

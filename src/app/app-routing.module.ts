@@ -27,10 +27,10 @@ const routes: Routes = [
   {path : "forgotten-password", component : ResetPasswordRequestComponent},
   
   {path : "user-session", component : UserSessionComponent, children: [
-    {path : "reset-password/:token", component : ResetPasswordComponent },
-    {path : "user-session-base", component : UserSessionBaseComponent},
-    {path : "user-info", component : UserInfoComponent},
-    {path : "user-favorites-list", component : UserFavoritesListComponent}
+    // {path : "reset-password/:token", component : ResetPasswordComponent },
+    // {path : "user-session-base", component : UserSessionBaseComponent},
+    // {path : "user-info", component : UserInfoComponent},
+    // {path : "user-favorites-list", component : UserFavoritesListComponent}
   ] },
 
   {path : "reset-password/:token", component : ResetPasswordComponent },

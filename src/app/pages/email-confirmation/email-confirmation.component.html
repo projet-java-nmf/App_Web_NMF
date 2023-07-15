@@ -1,19 +1,27 @@
 <section class="p-5">
 
-    <form [formGroup]="emailConfirmForm" (ngSubmit)="onSubmit()" class="w-50 mx-auto d-flex flex-column">
+    <!-- FORM EMAIL CONFIRMATION -->
+    <form [formGroup]="emailConfirmForm" (ngSubmit)="onSubmit()" class="p-5 w-50 mx-auto d-flex flex-column justify-content-center">
 
-        <h4 class="mb-3">Minute little Yogi Monkey, est-ce bien votre email ?</h4>
-        <p>Veuillez renseigner le code de confirmation email que vous avez reçu sur :  {{email}}</p>
+        <!-- ICON-FORM -->
+        <div>
+            <i class="fa-solid fa-person-military-to-person iconConfirmation mb-3"></i>
+            <!-- <img src="../../../assets/icons/person-military-to-person-solid.svg" alt="icon forgotten password" class="m-3"> -->
+        </div>
+
+        <h4 class="mb-5 text-center">Minute little Yogi Monkey, est-ce bien votre email ?</h4>
+        <p>Veuillez renseigner le code de confirmation email que vous avez reçu sur : {{email}}</p>
+
+        <!-- RESPONSE ERROR MESSAGE -->
         <div *ngIf="confirmMsg" class="alert alert-success">{{confirmMsg}}</div>
         <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
 
+        <!-- INPUT -->
         <div class="mb-3">
             <input formControlName="code" type="text" class="form-control" placeholder="Code reçu">
         </div>
-        
-        <button type="submit" class="btn btn-primary">
-            Confirmez votre email
-        </button>
+
+        <a routerLink="/user-session" class="mt-3"><button type="submit" class="btn mb-3">Confirmez votre email</button></a>
     </form>
 
 </section>

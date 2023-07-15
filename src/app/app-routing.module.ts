@@ -14,6 +14,7 @@ import { UserInfoComponent } from './pages/user/user-info/user-info.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UserSessionBaseComponent } from './pages/user/user-session-base/user-session-base.component';
 import { FranckHeaderComponent } from './pages/franck-header/franck-header.component';
+import { IfFavoriteListIsEmptyComponent } from './pages/user/if-favorite-list-is-empty/if-favorite-list-is-empty.component';
 
 const routes: Routes = [
   {path : "header-franck", component : FranckHeaderComponent},
@@ -25,11 +26,12 @@ const routes: Routes = [
   
   {path : "login", component : LoginComponent},
   {path : "reset-password", component : ResetPasswordRequestComponent},
+  {path : "reset-password/:token", component : ResetPasswordComponent },
   
   {path : "user-session", component : UserSessionComponent },
-  {path : "reset-password/:token", component : ResetPasswordComponent },
   {path : "user-session-base", component : UserSessionBaseComponent},
   {path : "user-info", component : UserInfoComponent},
+  {path : "if-favorite-list-is-empty", component : IfFavoriteListIsEmptyComponent},
   {path : "user-favorites-list", component : UserFavoritesListComponent},
 
   {path: "**", component: PageNotFoundComponent}

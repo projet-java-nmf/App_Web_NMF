@@ -1,25 +1,20 @@
 <section class="p-5 d-flex">
     
-    <nav class="d-flex flex-column ">
-        <h2 class="mb-5"> Bonjour "user"</h2>
+    <nav class="d-flex flex-column p-3 w-25">
+        <h2 class="mb-5">Bonjour "user"</h2>
         <!-- SUB MENU -->
         <ul>
             <li class="mb-3"><a routerLink="home">Me déconnecter</a></li>
             <li class="mb-3"><a class="" routerLink="user-info">Mes informations personnelles</a></li>
             <li class="mb-3"><a class="" routerLink="user-favorites-list">Ma liste de vidéos favorites</a></li>
+
         </ul>
-    
-        <!-- <div class="sidebar p-3">
-            <h6 class="mb-3"><a routerLink="home">Me déconnecter</a></h6>
-            <h6 class="mb-3"><a class="" routerLink="user-info">Mes informations personnelles</a></h6>
-            <h6 class="mb-3"><a class="" routerLink="user-favorites-list">Ma liste de vidéos favorites</a></h6>
-            <a routerLink="user-info">test</a>
-        </div> -->
     </nav>
 
     <!-- BODY -->
     <div>
         <app-user-session-base></app-user-session-base>
+        <router-outlet></router-outlet>
         <!-- <app-user-info></app-user-info> -->
         <!-- <app-user-favorites-list></app-user-favorites-list> -->
         <!-- <div class="test"></div> -->

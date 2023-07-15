@@ -24,15 +24,9 @@ const routes: Routes = [
   {path : "email-confirmation/:email", component : EmailConfirmationComponent},
   
   {path : "login", component : LoginComponent},
-  {path : "forgotten-password", component : ResetPasswordRequestComponent},
+  {path : "reset-password", component : ResetPasswordRequestComponent},
   
-  {path : "user-session", component : UserSessionComponent, children: [
-    // {path : "reset-password/:token", component : ResetPasswordComponent },
-    // {path : "user-session-base", component : UserSessionBaseComponent},
-    // {path : "user-info", component : UserInfoComponent},
-    // {path : "user-favorites-list", component : UserFavoritesListComponent}
-  ] },
-
+  {path : "user-session", component : UserSessionComponent },
   {path : "reset-password/:token", component : ResetPasswordComponent },
   {path : "user-session-base", component : UserSessionBaseComponent},
   {path : "user-info", component : UserInfoComponent},

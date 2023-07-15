@@ -1,42 +1,49 @@
 <section class="p-3 d-flex flex-column">
-    <!-- BODY -->
-    <form action="" class=" p-3">
-        <h3 class="">Mes informations de contact</h3>
-        <div class="d-flex flex-column">
-            <input class="mb-3" type="text" value="Civilité*" placeholder="test">
-            <input class="mb-3" type="text" value="Nom*" placeholder="test">
-            <input class="mb-3" type="text" value="Prénom*" placeholder="test">
-            <input type="text" value="Adresse email*" placeholder="test" disabled>
-        </div>
-        <p class="">* Champs obligatoires</p>
-        <p class="">Maisons du Monde s'engage sur la sécurité et la confidentialité de vos informations personnelles. En savoir plus</p>
-        <button class="" type="submit">Mettre à jour mes informations</button>
-    </form>
+
+    <div class="d-flex flex-wrap gap-3">
+        <form action="" class="p-5 w-25 d-flex flex-column">
+            <h3 class="mb-3">Mes informations de contact</h3>
     
-    <form action="" class=" p-3">
-        <h3 class="">Modifier mon mot de passe</h3>
-        <div class="d-flex flex-column">
-            <input class="mb-3" type="text" value="Mot de passe actuel*" placeholder="test">
-            <input class="mb-3" type="text" value="Nouveau mot de passe*" placeholder="test">
-            <input class="mb-3" type="text" value="Confirmez votre nouveau mot de passe*" placeholder="test">
-        </div>
-        <p class="">* Champs obligatoires</p>
-        <p>Pour vous assurer une sécurité maximale, votre mot de passe doit comporter : <br>
-            - 8 caractères minimum <br>
-            - une majuscule <br>
-            - une minuscule <br>
-            - un caractère spécial (!#@;%…) <br>
-            - un chiffre</p>
-        <button class="mb-2" type="submit">Modifier mon mot de passe</button>
-    </form>
+            <div class="d-flex flex-column">
+                <select class="mb-3 form-control" name="" id="">
+                    <option value="Mme">Mme</option>
+                    <option value="M.">M.</option>
+                </select>
+                <input class="mb-3 form-control" type="text" value="Nom*" placeholder="test">
+                <input class="mb-3 form-control" type="text" value="Prénom*" placeholder="test">
+                <input class="mb-3 form-control" type="text" value="Adresse email*" placeholder="test" disabled>
+            </div>
+            <p class="">* Champs obligatoires</p>
+            <p class="">Daily Yoga s'engage sur la sécurité et la confidentialité de vos informations personnelles. <a class="" routerLink="#">En savoir plus</a></p>
+            
+            <a href=""><button class="btn btn-primary" type="submit">Mettre à jour mes informations
+            </button></a>
+        </form>
+
+        <form action="" class="p-5 w-25 d-flex flex-column">
+            <h3 class="mb-3">Modifier mon mot de passe</h3>
+            <div class="d-flex flex-column">
+                <input class="mb-3 form-control text-success" type="text" value="Mot de passe actuel*" placeholder="test">
+                <input class="mb-3 form-control text-success" type="text" value="Nouveau mot de passe*" placeholder="test">  
+            </div>
+            <p>Pour vous assurer une sécurité maximale, votre mot de passe doit comporter : <br>
+                - 8 caractères minimum <br>
+                - une majuscule <br>
+                - une minuscule <br>
+                - un caractère spécial (!#@;%…) <br>
+                - un chiffre</p>
+            <p class="">* Champs obligatoires</p>
+            <div>
+                <input class="mb-3 form-control text-success" type="text" value="Confirmez votre nouveau mot de passe*" placeholder="test">
+            </div>
+            <button class="mb-2 btn btn-primary" type="submit">Modifier mon mot de passe</button>
+        </form>
+
+    </div>
     
-    <form action="" class=" p-3">
-        <h3 class="">Supprimer mon compte</h3>
-        <div class="d-flex flex-column">
-            <!-- <input class="mb-3" type="text" value="Mot de passe actuel*">
-            <input class="mb-3" type="text" value="Nouveau mot de passe*"> -->
-        </div>
-        <button class="mb-2" type="submit">Supprimer mon compte</button>
+    <form action="" class="p-5 w-25 d-flex flex-column">
+        <h3 class="mb-3">Supprimer mon compte</h3>
+        <button class="mb-3 btn btn-primary" type="submit">Supprimer mon compte</button>
     </form>
 
 

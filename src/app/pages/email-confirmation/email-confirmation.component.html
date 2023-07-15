@@ -2,7 +2,7 @@
 
     <form [formGroup]="emailConfirmForm" (ngSubmit)="onSubmit()" class="w-50 mx-auto d-flex flex-column">
 
-        <h4 class="mb-5 text-success">Minute little Yogi Monkey, est-ce bien votre email ?</h4>
+        <h4 class="mb-3">Minute little Yogi Monkey, est-ce bien votre email ?</h4>
         <p>Veuillez renseigner le code de confirmation email que vous avez reçu sur :  {{email}}</p>
         <div *ngIf="confirmMsg" class="alert alert-success">{{confirmMsg}}</div>
         <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
@@ -17,4 +17,3 @@
     </form>
 
 </section>
-

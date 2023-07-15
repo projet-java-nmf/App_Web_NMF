@@ -1,20 +1,24 @@
 section {
-    // gap: 20px;
+    // border: 1px solid black;
+    gap: 20px;
     row-gap: 20px;
 }
 
-a {
-    color: rgb(83, 80, 80);
-    font-weight: 300;
-    text-decoration: none;
-}
-
 form {
-    border: 1px solid black;
-    min-width: 35vw;
-    min-height: 30vh;
+    background-color: rgb(241, 241, 241);
+    // border: 1px solid black;
+    // justify-content: center;
+    min-width: 30vw;
+    // min-height: 50vh;
+    // min-height: 30vh;
+    padding: 0 10%;
 }
-    input{
-        min-width: 80%;
-
+    form a {
+        color: rgb(83, 80, 80);
+        font-weight: 300;
+        text-decoration: none;
     }
+    form input{
+        min-width: 80%;
+    }
+

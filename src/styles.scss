@@ -11,6 +11,8 @@
 //     font-family: 'Nanum-ExtraBold';
 //     src:url('../src/assets/fonts/Nanum_Gothic/NanumGothic-ExtraBold.ttf') format('truetype');
 // }
+
+// FONT 
 @font-face {
     font-family: 'Dots-Regular';
     src: url('../src/assets/fonts/Raleway_Dots/RalewayDots-Regular.ttf') format('truetype');
@@ -24,6 +26,7 @@
     src:url('../src/assets/fonts/Raleway/Raleway-VariableFont_wght.ttf') format('truetype');
 }
 
+// GRAPHIC CHARTER  
 .color-graphic-charter{
     color: #4A8251;
     color: #5CBA86;
@@ -35,6 +38,37 @@
 
 body {
     font-family: 'Raleway-VariableFont_wght', sans-serif;
-    // margin: 50px;
     padding: 0;
+}
+
+// TEMPLATE
+form, .template1, .subMenu {
+    background-color: #f1f1f1;
+    background-color: #dde4d7;
+}
+
+// NAV
+ul li {
+    list-style-type: none;
+}
+    ul li a {
+        text-decoration: none;
+    }
+
+// FORM
+// form a {
+//     font-weight: 300;
+//     text-decoration: none;
+// }
+
+.btn {
+    background-color: #4A8251;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+.btn:hover {
+    background-color: white;
+    color: #4A8251;
+    border: 1px solid #4A8251;
 }

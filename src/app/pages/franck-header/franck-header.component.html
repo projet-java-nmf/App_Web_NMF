@@ -21,15 +21,16 @@
       <li class="deroulant"><strong>AUTHENTIFICATION</strong>
         <ul  class="d-block sous">
           <li><a routerLink="login">Login</a></li>  
-          <li><a routerLink="reset-password">Reset-password</a></li>
+          <li><a routerLink="reset-password">Reset-password-request</a></li>
         </ul>
       </li>
       <li class="deroulant"><strong>ESPACE USER</strong>
         <ul class="d-block sous">
           <li><a routerLink="user-session">User-Session</a></li>
           <li><a routerLink="user-session-base">*User-Session-base</a></li>
-          <li><a routerLink="user-info">*User-Info</a></li>
+          <li><a routerLink="if-favorite-list-is-empty">*If-Favorite-List-Is-Empty</a></li>
           <li><a routerLink="user-favorites-list">*User-Favorites-list</a></li>
+          <li><a routerLink="user-info">*User-Info</a></li>
         </ul>
       </li>
       <li class="deroulant"><strong>ESPACE ADMIN</strong>
@@ -39,16 +40,31 @@
       </li>
     </ul>
 
-    <div class="text-center w-50">
-      <p class="border-bottom">Mon Compte</p>
-      <div class="d-flex text-start justify-content-end bouton gap-3">
-        <p>Bonjour "prénom user" {{email}}</p>
-        <!-- <div *ngIf="errorMsg" class="alert alert-danger m-2">{{errorMsg}}</div> -->
-        <div *ngFor = "let user of users">
-            <p>{{user.email}}</p>
+    
+    <!-- <div *ngIf="errorMsg" class="alert alert-danger m-2">{{errorMsg}}</div> -->
+    <div *ngFor = "let user of users">
+        <p>{{user.email}}</p>
+    </div>
+
+    <div class="text-center w-25">
+      <div class="d-flex justify-content-end ">
+        <div class="test ">
+          <p class="border-bottom"><strong>Mon Compte</strong></p>
+          <div class="d-flex gap-2">
+            <div class="test d-flex flex-column gap-3 pb-3">
+              <!-- ICON LOG IN -->
+              <i class="fa-solid fa-user iconConnect test"></i>
+              <i class="fa-solid fa-user-check iconConnect test"></i>
+            </div>
+            <div class="test  ">
+              <a><button class="btn" (click)="navigateTo()">Se connecter</button></a>
+              <p class="test mt-3">Bonjour "prénom user" {{email}} !</p>
+            </div>
+            <a class=""><button class="btn danger" (click)="logout()">Me déconnecter</button></a>
+            <!-- ICON LOG OUT -->
+            <i class="fa-solid fa-right-from-bracket iconLogout"></i>
+          </div>
         </div>
-        <a class=""><button class="btn btn-primary" (click)="navigateTo()">Log in</button></a>
-        <a class=""><button class="btn btn-danger" (click)="logout()">Log Out</button></a>
       </div>
     </div>
 

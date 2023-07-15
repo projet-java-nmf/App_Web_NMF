@@ -19,6 +19,7 @@ import { UserFavoritesListComponent } from './pages/user/user-favorites-list/use
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UserSessionBaseComponent } from './pages/user/user-session-base/user-session-base.component';
 import { FranckHeaderComponent } from './pages/franck-header/franck-header.component';
+import { IfFavoriteListIsEmptyComponent } from './pages/user/if-favorite-list-is-empty/if-favorite-list-is-empty.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FranckHeaderComponent } from './pages/franck-header/franck-header.compo
     UserFavoritesListComponent,
     PageNotFoundComponent,
     UserSessionBaseComponent,
-    FranckHeaderComponent
+    FranckHeaderComponent,
+    IfFavoriteListIsEmptyComponent
   ],
   imports: [
     BrowserModule,

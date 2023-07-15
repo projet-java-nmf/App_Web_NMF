@@ -1,31 +1,47 @@
 <section class="m-5 d-flex">
 
     <div class="d-flex gap-5 mx-auto">
-        <div class="login-form p-3">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-75 p-4 mx-auto">
-                <h2 class="mb-3">Déjà Yogi Monkey ?</h2>
-                <p>Connectez-vous ici pour poursuivre votre expérience sur Daily Yogi !</p>
-                <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
-                <div class="mb-3">
-                    <label for="">Email</label>
-                    <input formControlName="email" type="text" class="form-control" placeholder="">
-                </div>
-                <div class="mb-3">
-                    <label for="">Mot de passe</label>
+
+        <!-- FORM REGISTER -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="p-5 w-50">
+            <h2 class="mb-3">Déjà Yogi Monkey ?</h2>
+            <p>Connectez-vous ici pour poursuivre votre expérience sur Daily Yogi !</p>
+
+            <!-- RESPONSE ERROR MESSAGE -->
+            <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+
+            <!-- INPUT -->
+            <div class="mb-3">
+                <label for="">Email</label>
+                <input formControlName="email" type="text" class="form-control" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="">Mot de passe</label>
+                <div class="d-flex">
                     <input formControlName="password" type="password" name="" id="" class="form-control" placeholder="">
+                    <div class="mx-2 p-2 d-flex w-25 gap-3">
+                        <!-- ICONS EYE -->
+                        <img src="../../../assets/icons/eye-solid.svg" alt="icon forgotten password">
+                        <img src="../../../assets/icons/eye-slash-solid.svg" alt="icon forgotten password">
+                    </div>
                 </div>
-                <div class = "mb-3">
-                    <a routerLink="/reset-password">Mot de passe oublié !</a>
-                </div>
-                <a routerLink="/user-session"><button type="submit" class="btn btn-primary">Se connecter</button></a>
-            </form>
-        </div>
-    
-        <div class="p-5 card2 d-flex flex-column justify-content-center">
+            </div>
+
+            <!-- LINK TO RESET PASSWORD -->
+            <div class = "mb-3">
+                <a routerLink="/reset-password">Mot de passe oublié !</a>
+            </div>
+
+            <a routerLink="/user-session"><button type="submit" class="btn">Se connecter</button></a>
+        </form>
+
+        <!-- LINK TO REGISTER -->
+        <div class="template1 p-5 w-50 d-flex flex-column justify-content-center">
             <h2>Nouveau Yogi Monkey ?</h2>
             <p>Pour conserver vos vidéos favorites, vous pouvez compter sur votre compte !</p>
-            <a routerLink="/register"><button type="" class="btn btn-primary btn2">Créer mon compte</button></a>
+            <a routerLink="/register"><button type="submit" class="btn">Créer mon compte</button></a>
         </div>
+
     </div>
 
 </section>

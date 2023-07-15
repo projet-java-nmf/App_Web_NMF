@@ -2,81 +2,48 @@
 
     <h3 class="mx-3">Ma liste de vidéos favorites</h3>
 
-    <!-- SI LA LISTE EST VIDE -->
-    <div class="no-list m-3 p-5 text-center">
-        <img src="../../../../assets/icons/heart-solid.svg" alt="icon favoris" class="mb-3">
-        <h4 class="pb-2">Ajouté récemment dans votre liste de vidéos favorites</h4>
-        <div>
-            <p class="">Oh, mais vous n’avez encore eu envie de rien ?</p>
-            <a routerLink="/home" class=""><button type="submit" class="btn btn-primary">Je découvre</button></a>
-        </div>
-    </div>
+    <!-- IF FAVORITE LIST IS EMPTY -->
+    <app-if-favorite-list-is-empty></app-if-favorite-list-is-empty>
 
-    <!-- VIDEO CARDS : FAIRE UNE BOUCLE -->
-    <div class="main-box m-3 py-5 px-4">
+    
+    <div class="template1 m-5 py-5 px-4">
+
+        <!-- VIDEO CARDS : FAIRE UNE BOUCLE -->
         <div class="d-flex flex-lg-wrap gap-4">
-            <div class="box-video-card text-end">
-                <!--  RECUPERER LES VIDEOS DANS LA TABLE VIDEO EN BDD -->
-                <div class="video-card">
-                <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a>
+
+            <!--  RECUPERER LA VIDEO DANS LA TABLE VIDEO EN BDD -->
+            <div class="bg-white borderCard">
+    
+                <!-- VIDEO BOX-->
+                <div class="video-box text-end">
+    
+                    <!-- ICON BROKEN HEART -->
+                    <a routerLink="/user-favorites-list" class="text-end m-2 test">
+                        <i class="fa-solid fa-heart-crack iconBrokenHeart"></i>
+                        <!-- <img src="../../../../assets/icons/heart-crack-solid.svg" alt="icon favoris" class="mb-3"> -->
+                    </a>
+                    <!-- <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a> -->
+    
+                    <!-- VIDEO -->
+                    <!-- <video id="video" preload="">
+                        <source src="" type="video/mp4">
+                        <track label="English" kind="captions" srclang="en" src="" default>
+                    </video> -->
                 </div>
-                <div class="p-2 text-start">
-                    <p>Titre : </p>
+    
+                <!-- META DATA -->
+                <div class="p-2">
+                    <h5>Titre : </h5>
                     <p>Description :</p>
                 </div>
-            </div>
-            <div class="box-video-card text-end">
-                <!--  RECUPERER LES VIDEOS DANS LA TABLE VIDEO EN BDD -->
-                <div class="video-card">
-                <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a>
-                </div>
-                <div class="p-2 text-start">
-                    <p>Titre : </p>
-                    <p>Description :</p>
-                </div>
-            </div>
-            <div class="box-video-card text-end">
-                <!--  RECUPERER LES VIDEOS DANS LA TABLE VIDEO EN BDD -->
-                <div class="video-card">
-                <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a>
-                </div>
-                <div class="p-2 text-start">
-                    <p>Titre : </p>
-                    <p>Description :</p>
-                </div>
-            </div>
-            <div class="box-video-card text-end">
-                <!--  RECUPERER LES VIDEOS DANS LA TABLE VIDEO EN BDD -->
-                <div class="video-card">
-                <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a>
-                </div>
-                <div class="p-2 text-start">
-                    <p>Titre : </p>
-                    <p>Description :</p>
-                </div>
-            </div>
-            <div class="box-video-card text-end">
-                <!--  RECUPERER LES VIDEOS DANS LA TABLE VIDEO EN BDD -->
-                <div class="video-card">
-                <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a>
-                </div>
-                <div class="p-2 text-start">
-                    <p>Titre : </p>
-                    <p>Description :</p>
-                </div>
-            </div>
-            <div class="box-video-card text-end">
-                <!--  RECUPERER LES VIDEOS DANS LA TABLE VIDEO EN BDD -->
-                <div class="video-card">
-                <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a>
-                </div>
-                <div class="p-2 text-start">
-                    <p>Titre : </p>
-                    <p>Description :</p>
-                </div>
-            </div>
+    
+            </div>  
             
         </div>
-        <button class="mt-4 btn btn-primary">Plus de vidéo</button>
+
+        <!-- BUTTON MORE VIDEOS -->
+        <button class="mt-4 btn" type="submit">Plus de vidéo</button>
+
     </div>
+
 </section>

@@ -76,3 +76,16 @@ ul li {
     color: #4A8251;
     border: 1px solid #4A8251;
 }
+
+
+table > tr, th, td {
+    border: 1px solid black;
+
+}
+    table > tr > th {
+        background-color: rgb(197, 197, 197);
+    }
+    // ICONS
+    // th > img {
+    //     width: 25px;
+    // }

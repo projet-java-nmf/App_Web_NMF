@@ -35,9 +35,13 @@
     color: #FFFBFA;
     color: #FFFFFF;
 }
+:root {
+    --color4 : #dde4d7;
+  }
 
 body {
     font-family: 'Raleway-VariableFont_wght', sans-serif;
+    margin: 0;
     padding: 0;
 }
 

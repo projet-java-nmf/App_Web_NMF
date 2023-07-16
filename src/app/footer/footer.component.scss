@@ -1,0 +1,28 @@
+.container {
+    height:100%;
+    color: #4A8251;
+}
+ 
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0; /* on le colle en bas */
+    width: 100%;
+    height:200px; /* Hauteur du pied de page */
+    background-color: #dde4d7;
+    background-size:cover;
+}
+
+.logo {
+    height: 200px;
+    width: 250px;
+}
+
+span > a{
+    text-decoration: none;
+    color: inherit;
+}
+span > a:hover{
+    background-color:#FFFBFA;
+    color: #4A8251 
+}

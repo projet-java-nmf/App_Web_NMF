@@ -7,6 +7,7 @@ import { AdminGuard } from './core/guards/admin.guard';
 import { FranckHeaderComponent } from './pages/franck-header/franck-header.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 // REGISTER & AUTHENTICATION
 import { RegisterComponent } from './pages/register/register.component';
@@ -37,7 +38,6 @@ import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gesti
 import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-sections/admin-gestion-sections.component';
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
 
-
 const routes: Routes = [
   {path : "header-franck", component : FranckHeaderComponent},
 
@@ -67,7 +67,6 @@ const routes: Routes = [
   {path : "app-admin-gestion-videos-table-video", component : AdminGestionVideosTableVideoComponent},
   {path : "app-admin-gestion-sections", component : AdminGestionSectionsComponent},
   {path : "app-admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
-
   {path: "**", component: PageNotFoundComponent}
 ];
 

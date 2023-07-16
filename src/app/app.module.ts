@@ -13,6 +13,12 @@ import { ResetPasswordRequestComponent } from './pages/reset-password-request/re
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { EmailConfirmationComponent } from './pages/email-confirmation/email-confirmation.component';
 import { JwtInterceptorInterceptor } from './core/interceptors/jwt-interceptor.interceptor';
+
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { VideoDetailsComponent } from './video-details/video-details.component';
+import { VideoComponent } from './video/video.component';
+import { SectionComponent } from './section/section.component';
 import { UserSessionComponent } from './pages/user/user-session/user-session.component';
 import { UserInfoComponent } from './pages/user/user-info/user-info.component';
 import { UserFavoritesListComponent } from './pages/user/user-favorites-list/user-favorites-list.component';
@@ -37,6 +43,11 @@ import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gesti
     ResetPasswordRequestComponent,
     ResetPasswordComponent,
     EmailConfirmationComponent,
+    HeaderComponent,
+    FooterComponent,
+    VideoDetailsComponent,
+    VideoComponent,
+    SectionComponent
     UserSessionComponent,
     UserInfoComponent,
     UserFavoritesListComponent,

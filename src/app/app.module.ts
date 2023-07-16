@@ -47,7 +47,7 @@ import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gesti
     FooterComponent,
     VideoDetailsComponent,
     VideoComponent,
-    SectionComponent
+    SectionComponent,
     UserSessionComponent,
     UserInfoComponent,
     UserFavoritesListComponent,

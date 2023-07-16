@@ -1,1 +1,67 @@
-<p>admin-gestion-users-table-user works!</p>
+<section class="p-5">
+
+    <h1 class="pb-4">Gestion des membres</h1>
+
+    <!-- TABLE USER -->
+    <h2 class="">Table User</h2>
+    <!-- RESULTAT -->
+    <table class="w-100 text-center mb-5 mx-auto"> 
+        <tr class=""> 
+            <th class="">Id</th> 
+            <th>Mme / M.</th> 
+            <th>Prénom</th> 
+            <th>Nom</th> 
+            <th>Email</th> 
+            <th>Rôle</th> 
+            <th>Modifier</th> 
+            <th>Supprimer</th> 
+        </tr> 
+        <tr> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td> <a href=""><i class="fa-solid fa-pen"></i></a></td>
+            <td> <a href=""><i class="fa-solid fa-trash-can"></i></a></td>
+        </tr> 
+    </table> 
+    
+    <!-- MODIFIER LE COMPTE -->
+    <form class="p-5 mb-5 w-50 mx-auto">
+        <h2 class="py-3">Modifier le compte</h2>
+        <!-- RESPONSE ERROR MESSAGE -->
+        <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
+        <h4>Rôle</h4>
+        <div class="d-flex gap-5 mt-3 mb-3">
+            <div class="d-flex gap-2">
+                <input type="radio" name="role" value="user">
+                <label for="user">User</label>
+            </div>
+            <div class="d-flex gap-2">
+                <input type="radio" name="role" value="admin">
+                <label for="admin">Admin</label>
+            </div>
+        </div>
+        <h4>Je suis</h4>
+        <div class="d-flex gap-5 mt-3 mb-3">
+            <div class="d-flex gap-2">
+                <input type="radio" name="civilite" value="Mme">
+                <label for="Mme">Mme</label>
+            </div>
+            <div class="d-flex gap-2">
+                <input type="radio" name="civilite" value="M.">
+                <label for="dewey">M.</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Prénom*" required>
+            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*" required>
+            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Email*" disabled>
+        </div>
+        <a routerLink="/email-confirmation/:email"><button type="submit" class="btn mb-5">Modifier le compte</button></a>
+        <p class="text-end">Champs obligatoires *</p>
+    </form>
+
+</section>

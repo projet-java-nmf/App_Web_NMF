@@ -76,13 +76,10 @@
                 </form>
             </div>
     
-            
-            
         </div>
-        
-        
-        
+    
     </div>
+
     <!-- RESULTAT -->
     <table class="w-100 text-center mb-5 mx-auto"> 
         <tr class=""> 
@@ -96,7 +93,7 @@
             <th>Supprimer</th> 
         </tr> 
         <tr> 
-            <td>//</td> 
+            <td></td> 
             <td></td> 
             <td></td> 
             <td></td> 
@@ -106,6 +103,7 @@
             <td> <a href=""><i class="fa-solid fa-trash-can"></i></a></td>
         </tr> 
     </table> 
+    
     <!-- MODIFIER LE COMPTE -->
     <form class="p-5 mb-5 w-50 mx-auto">
         <h2 class="py-3">Modifier le compte</h2>
@@ -136,36 +134,10 @@
         <div class="mb-3">
             <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Prénom" required>
             <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*" required>
-            <input formControlName="email" type="text" class="form-control p-3 mb-3 w-75" placeholder="Email*"  >
+            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Email*" disabled>
         </div>
         <a routerLink="/email-confirmation/:email"><button type="submit" class="btn mb-5">Modifier le compte</button></a>
         <p class="text-end">Champs obligatoires *</p>
     </form>
-
-
-    <!-- TABLE DES COMPTES USER -->
-    <!-- <h2 class="pt-5">Table des comptes user</h2>
-    <table class="w-100 text-center mb-5"> 
-        <tr class=""> 
-            <th class="">Id</th> 
-            <th>Mme / M.</th> 
-            <th>Prénom</th> 
-            <th>Nom</th> 
-            <th>Email</th> 
-            <th>Rôle</th> 
-            <th>Modifier</th> 
-            <th>Supprimer</th> 
-        </tr> 
-        <tr> 
-            <td>123</td> 
-            <td>M.</td> 
-            <td>Bruce</td> 
-            <td>Wayne</td> 
-            <td>bruce.wayne@wcs.com</td> 
-            <td>User</td> 
-            <td>Icon Modifier</td>
-            <td>Icon supprimer</td>
-        </tr> 
-    </table>  -->
 
 </section>

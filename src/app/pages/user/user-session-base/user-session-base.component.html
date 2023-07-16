@@ -1,0 +1,33 @@
+<section class="px-5">
+    
+    <!-- IF FAVORITE LIST IS EMPTY -->
+    <app-if-favorite-list-is-empty></app-if-favorite-list-is-empty>
+
+    <!-- IF LIST EXIST -->
+    <!-- VIDEO CARDS : FAIRE UNE BOUCLE / PRESENTER LES DEUX DERNIERES VIDEOS MIS EN FAVORIS -->
+    <div class="template1 m-5 p-5 text-center">
+
+        <!-- VIDEO -->
+        <i class="fa-solid fa-heart iconHeart mb-3"></i>
+        <!-- <img src="../../../../assets/icons/heart-solid.svg" alt="icon favoris" class="mb-3"> -->
+
+        <h4>Ajouté récemment dans votre liste de vidéos favorites</h4>
+
+        <div class="d-flex justify-content-center flex-lg-wrap">
+            <div>
+                <!--  RECUPERER LA VIDEO DANS LA TABLE VIDEO EN BDD -->
+                <div class="video-card m-2"></div>
+            </div>
+            <div>
+                <!--  RECUPERER LA VIDEO DANS LA TABLE VIDEO EN BDD -->
+                <div class="video-card m-2"></div>
+            </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <p class="mt-3">
+            <a routerLink="/user-favorites-list">Voir ma liste de vidéos favorites</a>
+        </p>
+    </div>
+
+</section>

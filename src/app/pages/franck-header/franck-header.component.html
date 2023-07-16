@@ -1,0 +1,84 @@
+<header class="header pt-5 px-5 pb-2">
+
+  <h1>Daily Yoga</h1>
+  
+  <h4 class="mt-4"><strong>Barre de navigation pour le développement</strong></h4>
+
+  <nav class="mt-3 d-flex">
+    <ul class="w-100">
+      <li class="deroulant">
+        <ul class="d-block sous">
+          <li><a routerLink="home">Home</a></li>
+          <li><a routerLink="**">Page-not-found</a></li>
+        </ul>
+      </li>
+      <div>
+        <li class="deroulant"><strong>CREATE USER</strong>
+          <ul class="d-block sous">
+            <li><a routerLink="register">Register</a></li>
+            <li><a routerLink="email-confirmation/:email">Email-confirmation</a></li>
+          </ul>
+        </li>
+        <li class="deroulant mt-3"><strong>AUTHENTIFICATION</strong>
+          <ul  class="d-block sous">
+            <li><a routerLink="login">Login</a></li>  
+            <li><a routerLink="reset-password">Reset-password-request</a></li>
+          </ul>
+        </li>
+      </div>
+      <li class="deroulant"><strong>ESPACE USER</strong>
+        <ul class="d-block sous">
+          <li><a routerLink="user-session">User-Session</a></li><br>
+          <li><a routerLink="user-session-base">*User-Session-base</a></li>
+          <li><a routerLink="user-favorites-list">*User-Favorites-list</a></li>
+          <li><a routerLink="user-info">*User-Info</a></li><br>
+          <li><a routerLink="if-favorite-list-is-empty">*If-Favorite-List-Is-Empty</a></li>
+        </ul>
+      </li>
+      <li class="deroulant"><strong>ESPACE ADMIN</strong>
+        <ul class="d-block sous">
+          <li><a routerLink="app-admin-session">Admin-Session</a></li><br>
+          <li><a routerLink="user-session-base">*Admin-Session-base</a></li>
+          <li><a routerLink="user-favorites-list">*Admin-Favorites-list</a></li>
+          <li><a routerLink="user-info">*Admin-Info</a></li><br>
+          <li><a routerLink="app-admin-gestion-users-table-user">*Admin-Gestion-Users-Table-User</a></li>
+          <li><a routerLink="app-admin-gestion-users">*Admin-Gestion-Users</a></li><br>
+          <li><a routerLink="app-admin-gestion-videos-table-video">*Admin-Gestion-Table-Video</a></li>
+          <li><a routerLink="app-admin-gestion-videos">*Admin-Gestion-Vidéos</a></li><br>
+          <li><a routerLink="app-admin-gestion-sections-table-section">*Admin-Gestion-Table-Section</a></li>
+          <li><a routerLink="app-admin-gestion-sections">*Admin-Gestion-Sections</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    
+    <!-- <div *ngIf="errorMsg" class="alert alert-danger m-2">{{errorMsg}}</div> -->
+    <div *ngFor = "let user of users">
+        <p>{{user.email}}</p>
+    </div>
+
+    <div class="text-center w-25">
+      <div class="d-flex justify-content-end ">
+        <div class="test ">
+          <p class="border-bottom"><strong>Mon Compte</strong></p>
+          <div class="d-flex gap-2">
+            <div class="test d-flex flex-column gap-3 pb-3">
+              <!-- ICON LOG IN -->
+              <i class="fa-solid fa-user iconConnect test"></i>
+              <i class="fa-solid fa-user-check iconConnect test"></i>
+            </div>
+            <div class="test  ">
+              <a><button class="btn" (click)="navigateTo()">Se connecter</button></a>
+              <p class="test mt-3">Bonjour "prénom user" {{email}} !</p>
+            </div>
+            <a class=""><button class="btn danger" (click)="logout()">Me déconnecter</button></a>
+            <!-- ICON LOG OUT -->
+            <i class="fa-solid fa-right-from-bracket iconLogout"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+
+</header>

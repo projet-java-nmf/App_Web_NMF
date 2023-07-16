@@ -1,0 +1,82 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-color: hsl(92, 19%, 87%);
+    background-color: #D5DDBC;
+    background-color: #9e9e9e;
+    background-color: #cacaca;
+    // position: sticky;
+    // top: 0px;
+}
+
+nav {
+    width: 100%;
+}
+    nav ul {
+        // list-style-type: none;
+        display: flex;
+        gap: 20px;
+        padding: 0px;
+    }
+    nav ul::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+    nav a {
+        display: block;
+        // text-decoration: none;
+        // color: black;
+    }
+    nav ul li a:hover{
+        // color: red;
+        // border-bottom: 2px solid red;
+        color: yellow;
+        border-bottom: 2px solid gold;
+    }
+    .sous {
+        display: none;
+        box-shadow: 0px 1px 2px #CCC;
+    }
+    nav > ul li:hover .sous {
+        display: block;
+    }
+    .deroulant > a::after {
+        content: "▼";
+        font-size: 12px;
+    }
+    .bouton a:hover {
+        border-bottom: none;
+    }
+
+// MON COMPTE
+.border-bottom {
+    // border: 1px solid black;
+    // border-bottom: 2px solid black;
+    text-decoration: underline;
+}
+.danger {
+    background-color: #EF6262;
+    border-color: #EF6262;
+}
+    .danger:hover {
+        background-color: white;
+        border-color: #EF6262;
+        color: #EF6262;
+    }
+// ICON
+.iconConnect{
+    font-size: 30px;
+    color: #4a8251;
+}
+.iconLogout{
+    font-size: 30px;
+    color: #EF6262;
+}
+
+// .test {
+//     border: 1px solid black;
+// }

@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class RegisterComponent implements OnInit {
 
   registerForm : FormGroup = this.fb.group({
-    email : ['abbesbilel88@yahoo.fr', []],
+    email : ['projet.java.nmf@gmail.com', []],
     password : ['azerty', []]
   })
   errorMsg : string = "";
@@ -33,6 +33,5 @@ export class RegisterComponent implements OnInit {
     )
 
   }
-
 
 }

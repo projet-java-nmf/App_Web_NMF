@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class ResetPasswordRequestComponent implements OnInit {
 
   passwordForgottenForm : FormGroup = this.fb.group({
-    email : ['abbesbilel88@yahoo.fr', []],
+    email : ['m.sykhanou@gmail.com', []],
   })
   errorMsg : string = "";
   confirmMsg : string = "";

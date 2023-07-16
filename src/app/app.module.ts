@@ -15,6 +15,9 @@ import { EmailConfirmationComponent } from './pages/email-confirmation/email-con
 import { JwtInterceptorInterceptor } from './core/interceptors/jwt-interceptor.interceptor';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { VideoDetailsComponent } from './video-details/video-details.component';
+import { VideoComponent } from './video/video.component';
+import { SectionComponent } from './section/section.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { FooterComponent } from './footer/footer.component';
     ResetPasswordComponent,
     EmailConfirmationComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    VideoDetailsComponent,
+    VideoComponent,
+    SectionComponent
   ],
   imports: [
     BrowserModule,

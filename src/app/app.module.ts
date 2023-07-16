@@ -20,6 +20,13 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { UserSessionBaseComponent } from './pages/user/user-session-base/user-session-base.component';
 import { FranckHeaderComponent } from './pages/franck-header/franck-header.component';
 import { IfFavoriteListIsEmptyComponent } from './pages/user/if-favorite-list-is-empty/if-favorite-list-is-empty.component';
+import { AdminSessionComponent } from './pages/admin/admin-session/admin-session.component';
+import { AdminGestionUsersComponent } from './pages/admin/admin-gestion-users/admin-gestion-users.component';
+import { AdminGestionVideosComponent } from './pages/admin/admin-gestion-videos/admin-gestion-videos.component';
+import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-sections/admin-gestion-sections.component';
+import { AdminGestionUsersTableUserComponent } from './pages/admin/admin-gestion-users-table-user/admin-gestion-users-table-user.component';
+import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
+import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gestion-videos-table-video/admin-gestion-videos-table-video.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,14 @@ import { IfFavoriteListIsEmptyComponent } from './pages/user/if-favorite-list-is
     PageNotFoundComponent,
     UserSessionBaseComponent,
     FranckHeaderComponent,
-    IfFavoriteListIsEmptyComponent
+    IfFavoriteListIsEmptyComponent,
+    AdminSessionComponent,
+    AdminGestionUsersComponent,
+    AdminGestionVideosComponent,
+    AdminGestionSectionsComponent,
+    AdminGestionUsersTableUserComponent,
+    AdminGestionSectionsTableSectionComponent,
+    AdminGestionVideosTableVideoComponent,
   ],
   imports: [
     BrowserModule,

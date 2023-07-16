@@ -1,0 +1,61 @@
+<section class="p-5">
+
+    <h1 class="pb-4">Gestion des rôles</h1>
+
+    <div class="mt-5 d-flex justify-content-center gap-5 ">
+        
+        <div class="w-50">
+            <div>
+                <!-- Liste des Rôles pour un utilisateur -->
+                <form  class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                    <h2 class="py-3">Liste des Rôles pour un membre</h2>
+                    <div class="mb-3 d-flex gap-2">
+                        <input formControlName="code" type="search" class="form-control" placeholder="Id du User">
+                    </div>
+                    <button type="submit" class="btn mb-3 w-75">Rechercher ce membre</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="w-50">
+            <div>
+                <!-- Liste des utilisateurs pour un rôle -->
+                <form  class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                    <h2 class="py-3">Liste des membres pour un rôle</h2>
+                    <div class="mb-3 d-flex gap-2">
+                        <input formControlName="code" type="search" class="form-control" placeholder="Nom Rôle">
+                    </div>
+                    <button type="submit" class="btn mb-3 w-75">Rechercher les membres</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="w-50">
+            <div>
+                <!-- Ajouter des rôles à un utilisateur -->
+                <form  class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                    <h2 class="py-3">Ajouter des rôles à un membre</h2>
+                    <div class="mb-3 d-flex gap-2">
+                        <input formControlName="code" type="search" class="form-control" placeholder="Nom Rôle">
+                        <input class="mt-3" formControlName="code" type="search" class="form-control" placeholder="Id du User">
+                    </div>
+                    <button type="submit" class="btn mb-3 w-50">Ajouter ce rôle</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- RESULTAT -->
+    <table class="w-100 text-center mb-5 mx-auto"> 
+        <tr class=""> 
+            <th class="w-50">Id</th> 
+            <th class="w-50">Nom du rôle</th> 
+        </tr> 
+        <tr> 
+            <td>//</td> 
+            <td></td> 
+        </tr> 
+    </table> 
+    
+</section>

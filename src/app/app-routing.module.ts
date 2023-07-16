@@ -30,13 +30,22 @@ import { AdminSessionComponent } from './pages/admin/admin-session/admin-session
 import { AdminGestionUsersComponent } from './pages/admin/admin-gestion-users/admin-gestion-users.component';
 import { AdminGestionUsersTableUserComponent } from './pages/admin/admin-gestion-users-table-user/admin-gestion-users-table-user.component';
 
+// GESTION ROLES
+import { AdminGestionRolesComponent } from './pages/admin/admin-gestion-roles/admin-gestion-roles.component';
+import { AdminGestionRolesTableRoleComponent } from './pages/admin/admin-gestion-roles-table-role/admin-gestion-roles-table-role.component';
+
 // GESTION VIDEOS
 import { AdminGestionVideosComponent } from './pages/admin/admin-gestion-videos/admin-gestion-videos.component';
 import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gestion-videos-table-video/admin-gestion-videos-table-video.component';
 
+// GESTION CATEGORIES
+import { AdminGestionCategoriesComponent } from './pages/admin/admin-gestion-categories/admin-gestion-categories.component';
+import { AdminGestionCategoriesTableCategoryComponent } from './pages/admin/admin-gestion-categories-table-category/admin-gestion-categories-table-category.component';
+
 // GESTION SECTIONS
 import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-sections/admin-gestion-sections.component';
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
+
 
 const routes: Routes = [
   {path : "header-franck", component : FranckHeaderComponent},
@@ -63,10 +72,15 @@ const routes: Routes = [
   {path : "app-admin-session", component : AdminSessionComponent},
   {path : "app-admin-gestion-users", component : AdminGestionUsersComponent},
   {path : "app-admin-gestion-users-table-user", component : AdminGestionUsersTableUserComponent},
+  {path : "app-admin-gestion-roles", component : AdminGestionRolesComponent},
+  {path : "app-admin-gestion-roles-table-role", component : AdminGestionRolesTableRoleComponent},
   {path : "app-admin-gestion-videos", component : AdminGestionVideosComponent},
   {path : "app-admin-gestion-videos-table-video", component : AdminGestionVideosTableVideoComponent},
   {path : "app-admin-gestion-sections", component : AdminGestionSectionsComponent},
   {path : "app-admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
+  {path : "app-admin-gestion-categories", component : AdminGestionCategoriesComponent},
+  {path : "app-admin-gestion-categories-table-category", component : AdminGestionCategoriesTableCategoryComponent},
+
   {path: "**", component: PageNotFoundComponent}
 ];
 

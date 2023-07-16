@@ -1,0 +1,71 @@
+<section class="py-5 ps-5 pe-5 d-flex">
+    
+    <nav class="subMenu d-flex flex-column p-3 ">
+        
+        <h2 class="mb-5">Bonjour "admin"</h2>
+
+        <!-- SUB MENU -->
+        <ul class="p-0">
+            <li class="mb-3"><a routerLink="home">Me déconnecter</a></li>
+            <br>
+            <li class="mb-3"><a routerLink="user-info">Mes informations personnelles</a></li>
+            <li class="mb-3"><a routerLink="user-favorites-list">Ma liste de vidéos favorites</a></li>
+            <br>
+
+            <li class="mb-3"><a routerLink="app-admin-gestion-users"><i class="fa-solid fa-sliders"></i> Gestion des membres</a></li>
+            <li>
+                <ul>
+                    <li>
+                        <a routerLink="app-admin-gestion-users-table-user"><i class="fa-solid fa-table"></i> Liste des membres</a>
+                        
+                    </li>
+                </ul>
+            </li>
+            <br>
+            
+            <li class="mb-3"><a routerLink="app-admin-gestion-videos"><i class="fa-solid fa-sliders"></i> Gestion des vidéos</a></li>
+            <li>
+                <ul>
+                    <li>
+                        <a routerLink="app-admin-gestion-videos-table-video"><i class="fa-solid fa-table"></i> Liste des videos</a>
+                        
+                    </li>
+                </ul>
+            </li>
+            <br>
+            
+            <li class="mb-3"><a routerLink="app-admin-gestion-sections"><i class="fa-solid fa-sliders"></i> Gestion des sections</a></li>
+            <li>
+                <ul>
+                    <li>
+                        <a routerLink="app-admin-gestion-sections-table-section"><i class="fa-solid fa-table"></i> Liste des sections</a>
+                        
+                    </li>
+                </ul>
+            </li>
+            <br>
+            
+        </ul>
+    </nav>
+
+    <!-- BODY -->
+    <div class="w-100 p-0 m-0">
+        <!-- <app-user-session-base></app-user-session-base> -->
+
+        <!-- <app-user-info></app-user-info> -->
+        <!-- <app-user-favorites-list></app-user-favorites-list> -->
+
+        <app-admin-gestion-users></app-admin-gestion-users>
+
+        <app-admin-gestion-videos></app-admin-gestion-videos>
+        <app-admin-gestion-users-table-user></app-admin-gestion-users-table-user>
+
+        <app-admin-gestion-videos></app-admin-gestion-videos>
+        <app-admin-gestion-videos-table-video></app-admin-gestion-videos-table-video>
+
+        <app-admin-gestion-sections></app-admin-gestion-sections>
+        <app-admin-gestion-sections-table-section></app-admin-gestion-sections-table-section>
+
+    </div>
+
+</section>

@@ -12,30 +12,41 @@
           <li><a routerLink="**">Page-not-found</a></li>
         </ul>
       </li>
-      <li class="deroulant"><strong>CREATE USER</strong>
-        <ul class="d-block sous">
-          <li><a routerLink="register">Register</a></li>
-          <li><a routerLink="email-confirmation/:email">Email-confirmation</a></li>
-        </ul>
-      </li>
-      <li class="deroulant"><strong>AUTHENTIFICATION</strong>
-        <ul  class="d-block sous">
-          <li><a routerLink="login">Login</a></li>  
-          <li><a routerLink="reset-password">Reset-password-request</a></li>
-        </ul>
-      </li>
+      <div>
+        <li class="deroulant"><strong>CREATE USER</strong>
+          <ul class="d-block sous">
+            <li><a routerLink="register">Register</a></li>
+            <li><a routerLink="email-confirmation/:email">Email-confirmation</a></li>
+          </ul>
+        </li>
+        <li class="deroulant mt-3"><strong>AUTHENTIFICATION</strong>
+          <ul  class="d-block sous">
+            <li><a routerLink="login">Login</a></li>  
+            <li><a routerLink="reset-password">Reset-password-request</a></li>
+          </ul>
+        </li>
+      </div>
       <li class="deroulant"><strong>ESPACE USER</strong>
         <ul class="d-block sous">
-          <li><a routerLink="user-session">User-Session</a></li>
+          <li><a routerLink="user-session">User-Session</a></li><br>
           <li><a routerLink="user-session-base">*User-Session-base</a></li>
-          <li><a routerLink="if-favorite-list-is-empty">*If-Favorite-List-Is-Empty</a></li>
           <li><a routerLink="user-favorites-list">*User-Favorites-list</a></li>
-          <li><a routerLink="user-info">*User-Info</a></li>
+          <li><a routerLink="user-info">*User-Info</a></li><br>
+          <li><a routerLink="if-favorite-list-is-empty">*If-Favorite-List-Is-Empty</a></li>
         </ul>
       </li>
       <li class="deroulant"><strong>ESPACE ADMIN</strong>
         <ul class="d-block sous">
-          <li><a routerLink="admin-session">Admin-Session</a></li>
+          <li><a routerLink="app-admin-session">Admin-Session</a></li><br>
+          <li><a routerLink="user-session-base">*Admin-Session-base</a></li>
+          <li><a routerLink="user-favorites-list">*Admin-Favorites-list</a></li>
+          <li><a routerLink="user-info">*Admin-Info</a></li><br>
+          <li><a routerLink="app-admin-gestion-users-table-user">*Admin-Gestion-Users-Table-User</a></li>
+          <li><a routerLink="app-admin-gestion-users">*Admin-Gestion-Users</a></li><br>
+          <li><a routerLink="app-admin-gestion-videos-table-video">*Admin-Gestion-Table-Video</a></li>
+          <li><a routerLink="app-admin-gestion-videos">*Admin-Gestion-Vidéos</a></li><br>
+          <li><a routerLink="app-admin-gestion-sections-table-section">*Admin-Gestion-Table-Section</a></li>
+          <li><a routerLink="app-admin-gestion-sections">*Admin-Gestion-Sections</a></li>
         </ul>
       </li>
     </ul>

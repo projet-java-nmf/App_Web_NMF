@@ -11,26 +11,58 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  registerForm : FormGroup = this.fb.group({
-    email : ['projet.java.nmf@gmail.com', []],
-    password : ['azerty', []]
+  registerForm: FormGroup = this.fb.group({
+    gender: ['MALE', []],
+    firstname: ['Mickael', []],
+    lastname: ['SYKHA', []],
+    // email: ['projet.java.nmf@gmail.com', []],
+    email: ['msykhanou@yahoo.fr', []],
+    password: ['azerty', []]
   })
-  errorMsg : string = "";
+  errorMsg: string = "";
   constructor(
-    private fb : FormBuilder,
-    private router : Router,
-    private authService : AuthService
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit (){
+  onSubmit() {
+    console.log(this.registerForm.value);
+    // this.authService.register(this.registerForm.value).subscribe(
+    //   (response: any) => {
+    //     this.router.navigate(['email-confirmation', response.email]);
+    //   }
+    // )
+
+    // Mickael
+    this.errorMsg = "";
     this.authService.register(this.registerForm.value).subscribe(
-      (response : any) => {
+      (response: any) => {
+        console.log('reponse : ' + JSON.stringify(response));
         this.router.navigate(['email-confirmation', response.email]);
-      } 
+
+      }, (error) => {
+        console.log(error);
+        this.errorMsg = error.message;
+      }
     )
+
+    //console.log(this.emailConfirForm.value)
+
+    //
+  }
+
+  typeForPassword: string = "password";
+
+  seePassword() {
+    if (this.typeForPassword === "password") {
+      this.typeForPassword = "text";
+    } else {
+      this.typeForPassword = "password";
+    }
 
   }
 

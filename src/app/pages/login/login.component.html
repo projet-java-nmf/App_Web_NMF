@@ -18,21 +18,31 @@
             <div class="mb-3">
                 <label for="">Mot de passe</label>
                 <div class="d-flex">
-                    <input formControlName="password" type="password" name="" id="" class="form-control" placeholder="" required>
+                    <input formControlName="password" type="{{typeForPassword}}" name="" id="" class="form-control"
+                        placeholder="" required>
                     <div class="mx-2 p-2 d-flex w-25 gap-3">
                         <!-- ICONS EYE -->
-                        <img src="../../../assets/icons/eye-solid.svg" alt="icon forgotten password">
-                        <img src="../../../assets/icons/eye-slash-solid.svg" alt="icon forgotten password">
+                        <button type="button" (click)="seePassword()" class="btn btn-outline-secondary">
+                            <img *ngIf="typeForPassword==='password'" src="../../../assets/icons/eye-solid.svg"
+                                alt="icon forgotten password">
+                            <img *ngIf="typeForPassword==='text'" src="../../../assets/icons/eye-slash-solid.svg"
+                                alt="icon forgotten password">
+                        </button>
+
                     </div>
                 </div>
             </div>
 
             <!-- LINK TO RESET PASSWORD -->
-            <div class = "mb-3">
+            <div class="mb-3">
                 <a routerLink="/reset-password">Mot de passe oublié !</a>
             </div>
 
-            <a routerLink="/user-session"><button type="submit" class="btn">Se connecter</button></a>
+            <!--  <a routerLink="/user-session"><button type="submit" class="btn">Se connecter</button></a>
+         -->
+            <button type="submit" class="btn">Se connecter</button>
+
+
         </form>
 
         <!-- LINK TO REGISTER -->
@@ -43,5 +53,5 @@
         </div>
 
     </div>
-
+    qsdfqds
 </section>

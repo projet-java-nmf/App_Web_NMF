@@ -47,6 +47,11 @@ import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-secti
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
 import { UploadVideoComponent } from './upload-video/upload-video.component';
 
+// IMPLEM VIDEO & SECTION
+import { VideoCardComponent } from './pages/implem/video-card/video-card.component';
+import { VideoDetailsCardComponent } from './pages/implem/video-details-card/video-details-card.component';
+import { SectionVideoComponent } from './pages/implem/section-video/section-video.component';
+
 
 const routes: Routes = [
   {path : "header-franck", component : FranckHeaderComponent},
@@ -87,6 +92,10 @@ const routes: Routes = [
     {path : "admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
     {path : "admin-gestion-categories", component : AdminGestionCategoriesComponent},
     {path : "admin-gestion-categories-table-category", component : AdminGestionCategoriesTableCategoryComponent},
+
+    {path : "video-card", component : VideoCardComponent},
+    {path : "video-details-card", component : VideoDetailsCardComponent},
+    {path : "section-video", component : SectionVideoComponent},
   ]
 },
 

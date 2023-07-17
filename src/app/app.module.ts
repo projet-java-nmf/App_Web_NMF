@@ -38,6 +38,9 @@ import { AdminGestionCategoriesComponent } from './pages/admin/admin-gestion-cat
 import { AdminGestionCategoriesTableCategoryComponent } from './pages/admin/admin-gestion-categories-table-category/admin-gestion-categories-table-category.component';
 import { AdminGestionRolesComponent } from './pages/admin/admin-gestion-roles/admin-gestion-roles.component';
 import { AdminGestionRolesTableRoleComponent } from './pages/admin/admin-gestion-roles-table-role/admin-gestion-roles-table-role.component';
+import { VideoCardComponent } from './pages/implem/video-card/video-card.component';
+import { VideoDetailsCardComponent } from './pages/implem/video-details-card/video-details-card.component';
+import { SectionVideoComponent } from './pages/implem/section-video/section-video.component';
 
 
 @NgModule({
@@ -73,6 +76,9 @@ import { AdminGestionRolesTableRoleComponent } from './pages/admin/admin-gestion
     AdminGestionCategoriesTableCategoryComponent,
     AdminGestionRolesComponent,
     AdminGestionRolesTableRoleComponent,
+    VideoCardComponent,
+    VideoDetailsCardComponent,
+    SectionVideoComponent,
 
   ],
   imports: [

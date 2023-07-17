@@ -1,6 +1,6 @@
 <section class="py-5 ps-5 pe-5 d-flex">
     
-    <nav class="subMenu d-flex flex-column p-3 ">
+    <nav class="subMenu d-flex flex-column p-3 widthNavBar">
         
         <h2 class="mb-5">Bonjour "admin"</h2>
 
@@ -8,62 +8,36 @@
         <ul class="p-0">
             <li class="mb-3"><a routerLink="home">Me déconnecter</a></li>
             <br>
-            <li class="mb-3"><a routerLink="user-info">Mes informations personnelles</a></li>
-            <li class="mb-3"><a routerLink="user-favorites-list">Ma liste de vidéos favorites</a></li>
+            <li class="mb-3"><a routerLink="admin-session-base">Accueil Admin</a></li>
+            <li class="mb-3"><a routerLink="admin-info">Mes informations personnelles</a></li>
+            <li class="mb-3"><a routerLink="admin-favorites-list">Ma liste de vidéos favorites</a></li>
             <br>
 
-            <li class="mb-3"><a routerLink="app-admin-gestion-users"><i class="fa-solid fa-sliders"></i> Gestion des membres</a></li>
-            <li>
-                <ul>
-                    <li>
-                        <a routerLink="app-admin-gestion-users-table-user"><i class="fa-solid fa-table"></i> Liste des membres</a>
-                        
-                    </li>
-                </ul>
-            </li>
+            <li class=""><a routerLink="admin-gestion-users"><i class="fa-solid fa-sliders"></i> Gestion des membres</a></li>
+            <li><ul><li><a routerLink="admin-gestion-users-table-user"><i class="fa-solid fa-table"></i> Liste des membres</a></li></ul></li>
+            <br>
+
+            <li class=""><a routerLink="admin-gestion-roles"><i class="fa-solid fa-sliders"></i> Gestion des rôles</a></li>
+            <li><ul><li><a routerLink="admin-gestion-roles-table-role"><i class="fa-solid fa-table"></i> Liste des rôles</a></li></ul></li>
             <br>
             
-            <li class="mb-3"><a routerLink="app-admin-gestion-videos"><i class="fa-solid fa-sliders"></i> Gestion des vidéos</a></li>
-            <li>
-                <ul>
-                    <li>
-                        <a routerLink="app-admin-gestion-videos-table-video"><i class="fa-solid fa-table"></i> Liste des vidéos</a>
-                        
-                    </li>
-                </ul>
-            </li>
+            <li class=""><a routerLink="admin-gestion-videos"><i class="fa-solid fa-sliders"></i> Gestion des vidéos</a></li>
+            <li><ul><li><a routerLink="admin-gestion-videos-table-video"><i class="fa-solid fa-table"></i> Liste des vidéos</a></li></ul></li>
+            <br>
+
+            <li class=""><a routerLink="admin-gestion-categories"><i class="fa-solid fa-sliders"></i> Gestion des catégories</a></li>
+            <li><ul><li><a routerLink="admin-gestion-categories-table-category"><i class="fa-solid fa-table"></i> Liste des catégories</a></li></ul></li>
             <br>
             
-            <li class="mb-3"><a routerLink="app-admin-gestion-sections"><i class="fa-solid fa-sliders"></i> Gestion des sections</a></li>
-            <li>
-                <ul>
-                    <li>
-                        <a routerLink="app-admin-gestion-sections-table-section"><i class="fa-solid fa-table"></i> Liste des sections</a>
-                        
-                    </li>
-                </ul>
-            </li>
+            <li class=""><a routerLink="admin-gestion-sections"><i class="fa-solid fa-sliders"></i> Gestion des sections</a></li>
+            <li><ul><li><a routerLink="admin-gestion-sections-table-section"><i class="fa-solid fa-table"></i> Liste des sections</a></li></ul></li>
             <br>
-            
         </ul>
     </nav>
 
     <!-- BODY -->
     <div class="w-100 p-0 m-0">
-        <!-- <app-user-session-base></app-user-session-base> -->
-
-        <!-- <app-user-info></app-user-info> -->
-        <!-- <app-user-favorites-list></app-user-favorites-list> -->
-
-        <!-- <app-admin-gestion-users></app-admin-gestion-users> -->
-        <!-- <app-admin-gestion-users-table-user></app-admin-gestion-users-table-user> -->
-
-        <app-admin-gestion-videos></app-admin-gestion-videos>
-        <!-- <app-admin-gestion-videos-table-video></app-admin-gestion-videos-table-video> -->
-
-        <!-- <app-admin-gestion-sections></app-admin-gestion-sections> -->
-        <!-- <app-admin-gestion-sections-table-section></app-admin-gestion-sections-table-section> -->
-
+        <router-outlet></router-outlet>
     </div>
 
 </section>

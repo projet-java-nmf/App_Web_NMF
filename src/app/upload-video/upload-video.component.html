@@ -1,0 +1,10 @@
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" class="p-5 w-50">
+  <input type="text" formControlName="title" placeholder="Title" />
+  <input type="text" formControlName="description" placeholder="Description" />
+  <input
+    type="text"
+    formControlName="linkUrl"
+    placeholder="Lien Url de la video"
+  />
+  <button type="submit">Upload</button>
+</form>

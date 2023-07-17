@@ -37,6 +37,7 @@ import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gesti
 // GESTION SECTIONS
 import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-sections/admin-gestion-sections.component';
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
+import { UploadVideoComponent } from './upload-video/upload-video.component';
 
 const routes: Routes = [
   {path : "header-franck", component : FranckHeaderComponent},
@@ -67,7 +68,8 @@ const routes: Routes = [
   {path : "app-admin-gestion-videos-table-video", component : AdminGestionVideosTableVideoComponent},
   {path : "app-admin-gestion-sections", component : AdminGestionSectionsComponent},
   {path : "app-admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
-  {path: "**", component: PageNotFoundComponent}
+  {path: "**", component: PageNotFoundComponent},
+  {path: "videos", component: UploadVideoComponent}
 ];
 
 

@@ -33,6 +33,7 @@ import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-secti
 import { AdminGestionUsersTableUserComponent } from './pages/admin/admin-gestion-users-table-user/admin-gestion-users-table-user.component';
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
 import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gestion-videos-table-video/admin-gestion-videos-table-video.component';
+import { UploadVideoComponent } from './upload-video/upload-video.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gesti
     AdminGestionUsersTableUserComponent,
     AdminGestionSectionsTableSectionComponent,
     AdminGestionVideosTableVideoComponent,
+    UploadVideoComponent,
   ],
   imports: [
     BrowserModule,

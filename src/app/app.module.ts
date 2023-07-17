@@ -18,7 +18,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { VideoDetailsComponent } from './video-details/video-details.component';
 import { VideoComponent } from './video/video.component';
-import { SectionComponent } from './section/section.component';
 import { UserSessionComponent } from './pages/user/user-session/user-session.component';
 import { UserInfoComponent } from './pages/user/user-info/user-info.component';
 import { UserFavoritesListComponent } from './pages/user/user-favorites-list/user-favorites-list.component';
@@ -34,6 +33,7 @@ import { AdminGestionUsersTableUserComponent } from './pages/admin/admin-gestion
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
 import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gestion-videos-table-video/admin-gestion-videos-table-video.component';
 import { UploadVideoComponent } from './upload-video/upload-video.component';
+import { SectionComponent } from './section/section.component';
 import { AdminGestionCategoriesComponent } from './pages/admin/admin-gestion-categories/admin-gestion-categories.component';
 import { AdminGestionCategoriesTableCategoryComponent } from './pages/admin/admin-gestion-categories-table-category/admin-gestion-categories-table-category.component';
 import { AdminGestionRolesComponent } from './pages/admin/admin-gestion-roles/admin-gestion-roles.component';
@@ -41,7 +41,6 @@ import { AdminGestionRolesTableRoleComponent } from './pages/admin/admin-gestion
 import { VideoCardComponent } from './pages/implem/video-card/video-card.component';
 import { VideoDetailsCardComponent } from './pages/implem/video-details-card/video-details-card.component';
 import { SectionVideoComponent } from './pages/implem/section-video/section-video.component';
-
 
 @NgModule({
   declarations: [
@@ -56,7 +55,6 @@ import { SectionVideoComponent } from './pages/implem/section-video/section-vide
     FooterComponent,
     VideoDetailsComponent,
     VideoComponent,
-    SectionComponent,
     UserSessionComponent,
     UserInfoComponent,
     UserFavoritesListComponent,
@@ -72,6 +70,7 @@ import { SectionVideoComponent } from './pages/implem/section-video/section-vide
     AdminGestionSectionsTableSectionComponent,
     AdminGestionVideosTableVideoComponent,
     UploadVideoComponent,
+    SectionComponent,
     AdminGestionCategoriesComponent,
     AdminGestionCategoriesTableCategoryComponent,
     AdminGestionRolesComponent,

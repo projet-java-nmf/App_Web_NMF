@@ -46,6 +46,7 @@ import { AdminGestionCategoriesTableCategoryComponent } from './pages/admin/admi
 import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-sections/admin-gestion-sections.component';
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
 import { UploadVideoComponent } from './upload-video/upload-video.component';
+import { SectionComponent } from './section/section.component';
 
 // IMPLEM VIDEO & SECTION
 import { VideoCardComponent } from './pages/implem/video-card/video-card.component';

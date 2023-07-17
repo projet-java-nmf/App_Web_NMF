@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Video } from '../core/models/video';
 
 @Component({
@@ -12,10 +12,6 @@ export class SectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  addVideo(video : Video): void {
-    this.listVideos.push(video);
   }
 
 }

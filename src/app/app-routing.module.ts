@@ -62,24 +62,31 @@ const routes: Routes = [
   {path : "reset-password/:token", component : ResetPasswordComponent },
   
   // USER
-  {path : "user-session", component : UserSessionComponent },
-  {path : "user-session-base", component : UserSessionBaseComponent},
-  {path : "user-info", component : UserInfoComponent},
-  {path : "if-favorite-list-is-empty", component : IfFavoriteListIsEmptyComponent},
-  {path : "user-favorites-list", component : UserFavoritesListComponent},
+  {path : "user-session", component : UserSessionComponent, children: [
+    {path : "user-session-base", component : UserSessionBaseComponent},
+    {path : "user-info", component : UserInfoComponent},
+    {path : "user-favorites-list", component : UserFavoritesListComponent},
+    {path : "if-favorite-list-is-empty", component : IfFavoriteListIsEmptyComponent},
+  ]
+  },
 
   // ADMIN
-  {path : "app-admin-session", component : AdminSessionComponent},
-  {path : "app-admin-gestion-users", component : AdminGestionUsersComponent},
-  {path : "app-admin-gestion-users-table-user", component : AdminGestionUsersTableUserComponent},
-  {path : "app-admin-gestion-roles", component : AdminGestionRolesComponent},
-  {path : "app-admin-gestion-roles-table-role", component : AdminGestionRolesTableRoleComponent},
-  {path : "app-admin-gestion-videos", component : AdminGestionVideosComponent},
-  {path : "app-admin-gestion-videos-table-video", component : AdminGestionVideosTableVideoComponent},
-  {path : "app-admin-gestion-sections", component : AdminGestionSectionsComponent},
-  {path : "app-admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
-  {path : "app-admin-gestion-categories", component : AdminGestionCategoriesComponent},
-  {path : "app-admin-gestion-categories-table-category", component : AdminGestionCategoriesTableCategoryComponent},
+  {path : "admin-session", component : AdminSessionComponent, children: [  
+    {path : "admin-session-base", component : UserSessionBaseComponent},
+    {path : "admin-info", component : UserInfoComponent},
+    {path : "admin-favorites-list", component : UserFavoritesListComponent},
+    {path : "admin-gestion-users", component : AdminGestionUsersComponent},
+    {path : "admin-gestion-users-table-user", component : AdminGestionUsersTableUserComponent},
+    {path : "admin-gestion-roles", component : AdminGestionRolesComponent},
+    {path : "admin-gestion-roles-table-role", component : AdminGestionRolesTableRoleComponent},
+    {path : "admin-gestion-videos", component : AdminGestionVideosComponent},
+    {path : "admin-gestion-videos-table-video", component : AdminGestionVideosTableVideoComponent},
+    {path : "admin-gestion-sections", component : AdminGestionSectionsComponent},
+    {path : "admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
+    {path : "admin-gestion-categories", component : AdminGestionCategoriesComponent},
+    {path : "admin-gestion-categories-table-category", component : AdminGestionCategoriesTableCategoryComponent},
+  ]
+},
 
   {path: "**", component: PageNotFoundComponent}
 ];

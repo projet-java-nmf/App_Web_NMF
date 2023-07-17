@@ -33,10 +33,12 @@ import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-secti
 import { AdminGestionUsersTableUserComponent } from './pages/admin/admin-gestion-users-table-user/admin-gestion-users-table-user.component';
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
 import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gestion-videos-table-video/admin-gestion-videos-table-video.component';
+import { UploadVideoComponent } from './upload-video/upload-video.component';
 import { AdminGestionCategoriesComponent } from './pages/admin/admin-gestion-categories/admin-gestion-categories.component';
 import { AdminGestionCategoriesTableCategoryComponent } from './pages/admin/admin-gestion-categories-table-category/admin-gestion-categories-table-category.component';
 import { AdminGestionRolesComponent } from './pages/admin/admin-gestion-roles/admin-gestion-roles.component';
 import { AdminGestionRolesTableRoleComponent } from './pages/admin/admin-gestion-roles-table-role/admin-gestion-roles-table-role.component';
+
 
 @NgModule({
   declarations: [
@@ -66,10 +68,12 @@ import { AdminGestionRolesTableRoleComponent } from './pages/admin/admin-gestion
     AdminGestionUsersTableUserComponent,
     AdminGestionSectionsTableSectionComponent,
     AdminGestionVideosTableVideoComponent,
+    UploadVideoComponent,
     AdminGestionCategoriesComponent,
     AdminGestionCategoriesTableCategoryComponent,
     AdminGestionRolesComponent,
     AdminGestionRolesTableRoleComponent,
+
   ],
   imports: [
     BrowserModule,

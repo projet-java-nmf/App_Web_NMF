@@ -1,31 +1,25 @@
 <section class="p-3">
+  <h3 class="mx-3">Ma liste de vidéos favorites</h3>
 
-    <h3 class="mx-3">Ma liste de vidéos favorites</h3>
+  <!-- IF FAVORITE LIST IS EMPTY -->
+  <app-if-favorite-list-is-empty></app-if-favorite-list-is-empty>
 
-    <!-- IF FAVORITE LIST IS EMPTY -->
-    <app-if-favorite-list-is-empty></app-if-favorite-list-is-empty>
+  <div class="template1 m-5 py-5 px-4">
+    <!-- VIDEO CARDS : FAIRE UNE BOUCLE -->
+    <div class="d-flex flex-lg-wrap gap-4">
+      <!--  RECUPERER LA VIDEO DANS LA TABLE VIDEO EN BDD -->
+      <div class="bg-white borderCard">
+        <!-- VIDEO BOX-->
+        <div class="video-box text-end">
+          <!-- ICON BROKEN HEART -->
+          <a routerLink="/user-favorites-list" class="text-end m-2 test">
+            <i class="fa-solid fa-heart-crack iconBrokenHeart"></i>
+            <!-- <img src="../../../../assets/icons/heart-crack-solid.svg" alt="icon favoris" class="mb-3"> -->
+          </a>
+          <!-- <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a> -->
 
-    
-    <div class="template1 m-5 py-5 px-4">
-
-        <!-- VIDEO CARDS : FAIRE UNE BOUCLE -->
-        <div class="d-flex flex-lg-wrap gap-4">
-
-            <!--  RECUPERER LA VIDEO DANS LA TABLE VIDEO EN BDD -->
-            <div class="bg-white borderCard">
-    
-                <!-- VIDEO BOX-->
-                <div class="video-box text-end">
-    
-                    <!-- ICON BROKEN HEART -->
-                    <a routerLink="/user-favorites-list" class="text-end m-2 test">
-                        <i class="fa-solid fa-heart-crack iconBrokenHeart"></i>
-                        <!-- <img src="../../../../assets/icons/heart-crack-solid.svg" alt="icon favoris" class="mb-3"> -->
-                    </a>
-                    <!-- <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a> -->
-    
-                    <!-- VIDEO -->
-                    <!-- <video id="video" preload="">
+          <!-- VIDEO -->
+          <!-- <video id="video" preload="">
                         <source src="" type="video/mp4">
                         <track label="English" kind="captions" srclang="en" src="" default>
                     </video> -->
@@ -38,14 +32,10 @@
                     <p>Publié le :</p>
                     <p>Catégorie :</p>
                 </div>
-    
-            </div>  
-            
+            </div>
         </div>
-
-        <!-- BUTTON MORE VIDEOS -->
-        <button class="mt-4 btn" type="submit">Plus de vidéo</button>
-
-    </div>
-
+    <!-- BUTTON MORE VIDEOS -->
+    <button class="mt-4 btn" type="submit">Plus de vidéo</button>
+  </div>
+  <app-section [listVideos]="favoritesVideos"></app-section>
 </section>

@@ -45,6 +45,7 @@ import { AdminGestionCategoriesTableCategoryComponent } from './pages/admin/admi
 // GESTION SECTIONS
 import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-sections/admin-gestion-sections.component';
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
+import { UploadVideoComponent } from './upload-video/upload-video.component';
 
 
 const routes: Routes = [
@@ -72,6 +73,7 @@ const routes: Routes = [
 
   // ADMIN
   {path : "admin-session", component : AdminSessionComponent, children: [  
+    {path: "videos", component: UploadVideoComponent},
     {path : "admin-session-base", component : UserSessionBaseComponent},
     {path : "admin-info", component : UserInfoComponent},
     {path : "admin-favorites-list", component : UserFavoritesListComponent},

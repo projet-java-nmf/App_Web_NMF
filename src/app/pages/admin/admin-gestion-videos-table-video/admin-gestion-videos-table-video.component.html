@@ -1,7 +1,6 @@
 <section class="p-5">
-
-    <h1 class="pb-4">Gestion des vidéos</h1>
-
+  <h1 class="pb-4">Gestion des vidéos</h1>
+  
     <!-- TABLE VIDEO -->
     <h2 class="">Table Vidéo</h2>
     <!-- RESULTAT -->
@@ -18,7 +17,7 @@
             <th class="w-auto">Modifier</th> 
             <th class="w-auto">Supprimer</th> 
         </tr> 
-        <tr> 
+        <tr *ngFor="let video of videosList"> 
             <td></td> 
             <td></td> 
             <td></td> 

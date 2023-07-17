@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Video } from 'src/app/core/models/video';
 
 @Component({
   selector: 'app-user-favorites-list',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-favorites-list.component.scss']
 })
 export class UserFavoritesListComponent implements OnInit {
-
+  favoritesVideos : Array<Video> = [];
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   

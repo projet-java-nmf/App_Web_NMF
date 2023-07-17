@@ -6,6 +6,7 @@ Injectable({
 export interface Video {
     title: String;
     description: String;
-    privated?: boolean ;
-    hasTeaser?: boolean ;
-}
+    linkUrl: String;
+    categories: Array<String>;
+    publicationDate: String;
+}   

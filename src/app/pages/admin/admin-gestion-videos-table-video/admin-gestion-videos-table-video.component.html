@@ -1,5 +1,74 @@
 <section class="p-5">
   <h1 class="pb-4">Gestion des vidéos</h1>
+  
+    <!-- TABLE VIDEO -->
+    <h2 class="">Table Vidéo</h2>
+    <!-- RESULTAT -->
+    <table class="w-100 text-center mb-5 mx-auto"> 
+        <tr class=""> 
+            <th class="w-auto">Id</th> 
+            <th class="w-auto">Titre</th> 
+            <th class="w-auto">Description</th> 
+            <th class="w-auto">Date de publication</th> 
+            <th class="w-auto">Lien URL</th> 
+            <th class="w-auto">Type</th> 
+            <th class="w-auto">Teaser</th> 
+            <th class="w-auto">Catégorie</th> 
+            <th class="w-auto">Modifier</th> 
+            <th class="w-auto">Supprimer</th> 
+        </tr> 
+        <tr> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td> <a href=""><i class="fa-solid fa-pen"></i></a></td>
+            <td> <a href=""><i class="fa-solid fa-trash-can"></i></a></td>
+        </tr> 
+    </table> 
+    
+    <!-- MODIFIER LA VIDEO -->
+    <form class="p-5 mb-5 w-50 mx-auto">
+        <h2 class="py-3">Modifier la vidéo</h2>
+        <!-- RESPONSE ERROR MESSAGE -->
+        <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
+        <h4>Type</h4>
+        <div class="d-flex gap-5 mt-3 mb-3">
+            <div class="d-flex gap-2">
+                <input type="radio" name="type" value="privé">
+                <label for="privé">Privé</label>
+            </div>
+            <div class="d-flex gap-2">
+                <input type="radio" name="type" value="public">
+                <label for="public">Public</label>
+            </div>
+        </div>
+        <h4>Teaser</h4>
+        <div class="d-flex gap-5 mt-3 mb-3">
+            <div class="d-flex gap-2">
+                <input type="radio" name="teaser" value="oui">
+                <label for="oui">Oui</label>
+            </div>
+            <div class="d-flex gap-2">
+                <input type="radio" name="teaser" value="non">
+                <label for="non">Non</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Titre*" required>
+            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
+            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Date de publication*" required>
+            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Lien URL*" required>
+            <!-- <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required> -->
+        </div>
+        <a routerLink=""><button type="submit" class="btn mb-5">Modifier la vidéo</button></a>
+        <p class="text-end">Champs obligatoires *</p>
+    </form>
+
 
   <!-- TABLE VIDEO -->
   <h2 class="">Table Vidéo</h2>
@@ -95,4 +164,5 @@
     >
     <p class="text-end">Champs obligatoires *</p>
   </form>
+
 </section>

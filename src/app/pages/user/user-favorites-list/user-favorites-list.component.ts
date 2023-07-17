@@ -21,4 +21,7 @@ export class UserFavoritesListComponent implements OnInit {
     )
   }
 
+  
+
+
 }

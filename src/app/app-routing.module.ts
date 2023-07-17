@@ -30,15 +30,29 @@ import { AdminSessionComponent } from './pages/admin/admin-session/admin-session
 import { AdminGestionUsersComponent } from './pages/admin/admin-gestion-users/admin-gestion-users.component';
 import { AdminGestionUsersTableUserComponent } from './pages/admin/admin-gestion-users-table-user/admin-gestion-users-table-user.component';
 
+// GESTION ROLES
+import { AdminGestionRolesComponent } from './pages/admin/admin-gestion-roles/admin-gestion-roles.component';
+import { AdminGestionRolesTableRoleComponent } from './pages/admin/admin-gestion-roles-table-role/admin-gestion-roles-table-role.component';
+
 // GESTION VIDEOS
 import { AdminGestionVideosComponent } from './pages/admin/admin-gestion-videos/admin-gestion-videos.component';
 import { AdminGestionVideosTableVideoComponent } from './pages/admin/admin-gestion-videos-table-video/admin-gestion-videos-table-video.component';
+
+// GESTION CATEGORIES
+import { AdminGestionCategoriesComponent } from './pages/admin/admin-gestion-categories/admin-gestion-categories.component';
+import { AdminGestionCategoriesTableCategoryComponent } from './pages/admin/admin-gestion-categories-table-category/admin-gestion-categories-table-category.component';
 
 // GESTION SECTIONS
 import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-sections/admin-gestion-sections.component';
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
 import { UploadVideoComponent } from './upload-video/upload-video.component';
 import { SectionComponent } from './section/section.component';
+
+// IMPLEM VIDEO & SECTION
+import { VideoCardComponent } from './pages/implem/video-card/video-card.component';
+import { VideoDetailsCardComponent } from './pages/implem/video-details-card/video-details-card.component';
+import { SectionVideoComponent } from './pages/implem/section-video/section-video.component';
+
 
 const routes: Routes = [
   {path : "header-franck", component : FranckHeaderComponent},
@@ -55,23 +69,38 @@ const routes: Routes = [
   {path : "reset-password/:token", component : ResetPasswordComponent },
   
   // USER
-  {path : "user-session", component : UserSessionComponent },
-  {path : "user-session-base", component : UserSessionBaseComponent},
-  {path : "user-info", component : UserInfoComponent},
-  {path : "if-favorite-list-is-empty", component : IfFavoriteListIsEmptyComponent},
-  {path : "user-favorites-list", component : UserFavoritesListComponent},
+  {path : "user-session", component : UserSessionComponent, children: [
+    {path : "user-session-base", component : UserSessionBaseComponent},
+    {path : "user-info", component : UserInfoComponent},
+    {path : "user-favorites-list", component : UserFavoritesListComponent},
+    {path : "if-favorite-list-is-empty", component : IfFavoriteListIsEmptyComponent},
+  ]
+  },
 
   // ADMIN
-  {path : "app-admin-session", component : AdminSessionComponent},
-  {path : "app-admin-gestion-users", component : AdminGestionUsersComponent},
-  {path : "app-admin-gestion-users-table-user", component : AdminGestionUsersTableUserComponent},
-  {path : "app-admin-gestion-videos", component : AdminGestionVideosComponent},
-  {path : "app-admin-gestion-videos-table-video", component : AdminGestionVideosTableVideoComponent},
-  {path : "app-admin-gestion-sections", component : AdminGestionSectionsComponent},
-  {path : "app-admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
-  {path: "**", component: PageNotFoundComponent},
-  {path: "videos", component: UploadVideoComponent},
-  {path: "section", component: SectionComponent}
+  {path : "admin-session", component : AdminSessionComponent, children: [  
+    {path: "videos", component: UploadVideoComponent},
+    {path : "admin-session-base", component : UserSessionBaseComponent},
+    {path : "admin-info", component : UserInfoComponent},
+    {path : "admin-favorites-list", component : UserFavoritesListComponent},
+    {path : "admin-gestion-users", component : AdminGestionUsersComponent},
+    {path : "admin-gestion-users-table-user", component : AdminGestionUsersTableUserComponent},
+    {path : "admin-gestion-roles", component : AdminGestionRolesComponent},
+    {path : "admin-gestion-roles-table-role", component : AdminGestionRolesTableRoleComponent},
+    {path : "admin-gestion-videos", component : AdminGestionVideosComponent},
+    {path : "admin-gestion-videos-table-video", component : AdminGestionVideosTableVideoComponent},
+    {path : "admin-gestion-sections", component : AdminGestionSectionsComponent},
+    {path : "admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
+    {path : "admin-gestion-categories", component : AdminGestionCategoriesComponent},
+    {path : "admin-gestion-categories-table-category", component : AdminGestionCategoriesTableCategoryComponent},
+
+    {path : "video-card", component : VideoCardComponent},
+    {path : "video-details-card", component : VideoDetailsCardComponent},
+    {path : "section-video", component : SectionVideoComponent},
+  ]
+},
+
+  {path: "**", component: PageNotFoundComponent}
 ];
 
 

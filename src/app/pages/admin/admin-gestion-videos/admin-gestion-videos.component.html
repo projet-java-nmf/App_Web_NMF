@@ -3,51 +3,51 @@
 
     <div class="mt-3 d-flex justify-content-center gap-5 ">
         
-        <form class="p-3 mb-5 w-50">
+        <form [formGroup]="videoForm" (ngSubmit)="onSubmit()" class="p-3 mb-5 w-50">
             <h2 class="py-3">Créer une vidéo</h2>
             <!-- RESPONSE ERROR MESSAGE -->
             <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
             <h4>Type</h4>
             <div class="d-flex gap-5 mt-3 mb-3">
                 <div class="d-flex gap-2">
-                    <input type="radio" name="type" value="privé">
+                    <input formControlName="isPrivate" type="radio" name="type" value="true">
                     <label for="privé">Privé</label>
                 </div>
                 <div class="d-flex gap-2">
-                    <input type="radio" name="type" value="public">
+                    <input formControlName="isPrivate" type="radio" name="type" value="false">
                     <label for="public">Public</label>
                 </div>
             </div>
             <h4>Teaser</h4>
             <div class="d-flex gap-5 mt-3 mb-3">
                 <div class="d-flex gap-2">
-                    <input type="radio" name="teaser" value="oui">
+                    <input formControlName="hasTeaser" type="radio" name="teaser" value="true">
                     <label for="oui">Oui</label>
                 </div>
                 <div class="d-flex gap-2">
-                    <input type="radio" name="teaser" value="non">
+                    <input formControlName="hasTeaser" type="radio" name="teaser" value="false">
                     <label for="non">Non</label>
                 </div>
             </div>
             <div class="mb-3">
-                <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Titre*" required>
-                <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
-                <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Date de publication*" required>
-                <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Lien URL de la vidéo*" required>
+                <input formControlName="title" type="text" class="form-control p-3 mb-3 w-75" placeholder="Titre*">
+                <input formControlName="description" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" >
+                <input formControlName="publicationDate" type="text" class="form-control p-3 mb-3 w-75" placeholder="Date de publication*" >
+                <input formControlName="linkUrl" type="text" class="form-control p-3 mb-3 w-75" placeholder="Lien URL de la vidéo*" >
                 <!-- <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required> -->
             </div>
-            <a routerLink="/email-confirmation/:email"><button type="submit" class="btn mb-5">Créer la vidéo</button></a>
+            <button type="submit" class="btn mb-5">Créer la vidéo</button>
             <p class="text-end">Champs obligatoires *</p>
         </form>
 
         <div class="w-50">
             <div>
                 <!-- Rechercher une vidéo -->
-                <form  class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                <form [formGroup]="videoSearchForm" (ngSubmit)="onSubmit()" class="p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
                     <h2 class="py-3">Rechercher une vidéo</h2>
                     <div class="mb-3 d-flex gap-2">
-                        <input formControlName="code" type="search" class="form-control" placeholder="Id de la vidéo">
-                        <input class="mt-3" formControlName="code" type="search" class="form-control" placeholder="Titre">
+                        <input formControlName="idVideo" type="search" class="form-control" placeholder="Id de la vidéo">
+                        <input class="mt-3" formControlName="titreVideo" type="search" class="form-control" placeholder="Titre">
                     </div>
                     <button type="submit" class="btn mb-3 w-50">Rechercher la vidéo</button>
                 </form>

@@ -1,27 +1,32 @@
 <section class="p-3">
-    <h3 class="mx-3">TEMPLATE Card Vidéo</h3>
-    
-    <div class="template1 m-5 py-5 px-4">
-      <!-- VIDEO CARDS : FAIRE UNE BOUCLE -->
-      <div class="d-flex flex-lg-wrap gap-4">
-        <!--  RECUPERER LA VIDEO DANS LA TABLE VIDEO EN BDD -->
-        <div class="bg-white borderCard">
-          <!-- VIDEO BOX-->
-          <div class="video-box text-end">
-            <!-- <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a> -->
-            <!-- VIDEO -->
-            <!-- <video id="video" preload="">
+  <!-- <h3 class="mx-3">TEMPLATE Card Vidéo</h3> -->
+
+  <div class="template1 m-5 py-5 px-4">
+    <!-- VIDEO CARDS : FAIRE UNE BOUCLE -->
+    <div class="d-flex flex-lg-wrap gap-4">
+      <!--  RECUPERER LA VIDEO DANS LA TABLE VIDEO EN BDD -->
+      <div class="bg-white borderCard">
+        <!-- VIDEO BOX-->
+        <div class="video-box text-end">
+          <iframe
+            width="300"
+            height="200"
+            [src]="convertToSafeUrl(video.linkUrl)"
+            frameborder="0"
+          ></iframe>
+          <!-- <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a> -->
+          <!-- VIDEO -->
+          <!-- <video id="video" preload="">
                           <source src="" type="video/mp4">
                           <track label="English" kind="captions" srclang="en" src="" default>
                       </video> -->
-                  </div>
-      
-                  <!-- META DATA -->
-                  <div class="p-2">
-                      <h5 class="mb-3">Titre : </h5>
-                  </div>
-              </div>
-          </div>
+        </div>
 
+        <!-- META DATA -->
+        <div class="p-2">
+          <h5 class="mb-3">Titre : {{ video.title }}</h5>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>

@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Video } from "./video";
 
 Injectable({
     providedIn: 'root'
@@ -6,5 +7,5 @@ Injectable({
 export interface Section {
     name: String;
     description: String;
-    listVideos: Array<any>;
+    videos: Array<Video>;
 }

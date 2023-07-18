@@ -1,3 +1,32 @@
 .navbar {
     background-color: var(--color4);
 }
+
+// MON COMPTE
+.border-bottom {
+    // border: 1px solid black;
+    // border-bottom: 2px solid black;
+    text-decoration: underline;
+}
+.danger {
+    background-color: #EF6262;
+    border-color: #EF6262;
+}
+    .danger:hover {
+        background-color: white;
+        border-color: #EF6262;
+        color: #EF6262;
+    }
+// ICON
+.iconConnect{
+    font-size: 30px;
+    color: #4a8251;
+}
+.iconLogout{
+    font-size: 30px;
+    color: #EF6262;
+}
+
+// .test {
+//     border: 1px solid black;
+// }

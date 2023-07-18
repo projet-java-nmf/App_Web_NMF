@@ -102,4 +102,21 @@ export class AuthService {
     return this.http.get(this.url + "users")
   }
 
+
+
+  getRolesById(body: any): Observable<any> {
+    return this.http.post<any>(
+      this.url + "admin/roles/user",
+      body
+    )
+  }
+
+  getUsersByRole(body: any): Observable<any> {
+    console.log(this.url + "admin/roles/users");
+    return this.http.post<any>(
+      this.url + "admin/roles/users",
+      body
+    )
+  }
+
 }

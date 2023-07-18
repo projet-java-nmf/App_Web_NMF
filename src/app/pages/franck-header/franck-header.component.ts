@@ -22,8 +22,8 @@ export class FranckHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.email = this.authService.getEmail();
-    if (this.authService.getGender() == 'MALE') this.gender = 'M.';
-    if (this.authService.getGender() == 'FEMALE') this.gender = 'Mme';
+    if (this.authService.getGender() == 'MALE') { this.gender = 'M.'; }
+    if (this.authService.getGender() == 'FEMALE') { this.gender = 'Mme'; }
     this.firstname = this.authService.getFirstname();
     this.authService.getUsers().subscribe(
       (response: any) => {

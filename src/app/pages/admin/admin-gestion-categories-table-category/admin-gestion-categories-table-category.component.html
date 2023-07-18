@@ -1,20 +1,18 @@
 <section class="p-5">
 
-    <h1 class="pb-4">Gestion des sections</h1>
+    <h1 class="pb-4">Gestion des catégories</h1>
 
-    <!-- TABLE SECTION -->
-    <h2 class="">Table Section</h2>
+    <!-- TABLE CATEGORY -->
+    <h2 class="">Table Catégory</h2>
     <!-- RESULTAT -->
     <table class="w-100 text-center mb-5 mx-auto">
         <tr class="">
             <th class="w-25">Id</th>
-            <th class="w-25">Nom</th>
-            <th class="w-50">Description</th>
+            <th class="w-75">Nom</th>
             <th class="w-25">Modifier</th>
             <th class="w-25">Supprimer</th>
         </tr>
         <tr>
-            <td></td>
             <td></td>
             <td></td>
             <td> <a href=""><i class="fa-solid fa-pen"></i></a></td>
@@ -22,18 +20,15 @@
         </tr>
     </table>
 
-    <!-- MODIFIER LA SECTION -->
+    <!-- MODIFIER LA CATEGORIE -->
     <form class="p-5 mb-5 w-50 mx-auto">
-        <h2 class="py-3">Modifier la section</h2>
+        <h2 class="py-3">Modifier la catégorie 'nom-catégorie'</h2>
         <!-- RESPONSE ERROR MESSAGE -->
         <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
-
         <div class="mb-3">
             <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*" required>
-            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
         </div>
-        <a routerLink=""><button type="submit" class="btn mb-5">Modifier la section</button></a>
-        <p class="text-end">Champs obligatoires *</p>
+        <a routerLink=""><button type="submit" class="btn mb-5">Modifier la catégorie</button></a>
     </form>
 
 </section>

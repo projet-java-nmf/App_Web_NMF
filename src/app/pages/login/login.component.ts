@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.errorMsg = "";
+    console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(
       (response: any) => {
         this.authService.setJwt(response.jwt);
@@ -57,7 +58,7 @@ export class LoginComponent implements OnInit {
         //  console.log('totot ' + response.roles.includes('ADMIN'));
         //  console.log('totot2 ' + response.roles.includes('USER'));
       }, (error) => {
-        this.errorMsg = error.error.message;
+        this.errorMsg = error.message;
       }
     )
   }

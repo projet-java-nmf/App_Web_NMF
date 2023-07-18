@@ -3,7 +3,7 @@
     <h1 class="pb-4">Gestion des vidéos</h1>
 
     <div class="mt-3 d-flex justify-content-center gap-5 ">
-        
+
         <form class="p-3 mb-5 w-50">
             <h2 class="py-3">Créer une vidéo</h2>
             <!-- RESPONSE ERROR MESSAGE -->
@@ -31,45 +31,60 @@
                 </div>
             </div>
             <div class="mb-3">
-                <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Titre*" required>
-                <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
-                <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Date de publication*" required>
-                <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required>
+                <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Titre*" required>
+                <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
+                <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Date de publication*" required>
+                <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Lien URL de la vidéo*" required>
+                <!-- <input   type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required> -->
             </div>
-            <a routerLink="/email-confirmation/:email"><button type="submit" class="btn mb-5">Créer la vidéo</button></a>
+            <a routerLink="/email-confirmation/:email"><button type="submit" class="btn mb-5">Créer la
+                    vidéo</button></a>
             <p class="text-end">Champs obligatoires *</p>
         </form>
 
         <div class="w-50">
             <div>
-                <!-- FORM SEARCH USER -->
-                <form  class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                <!-- Rechercher une vidéo -->
+                <form class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
                     <h2 class="py-3">Rechercher une vidéo</h2>
                     <div class="mb-3 d-flex gap-2">
-                        <input formControlName="code" type="search" class="form-control" placeholder="Id de la vidéo">
-                        <input class="mt-3" formControlName="code" type="search" class="form-control" placeholder="Titre">
+                        <input type="search" class="form-control" placeholder="Id de la vidéo">
+                        <input class="mt-3" type="search" class="form-control" placeholder="Titre">
                     </div>
                     <button type="submit" class="btn mb-3 w-50">Rechercher la vidéo</button>
                 </form>
             </div>
             <div>
                 <!-- FORM SEARCH USER -->
-                <form  class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                <form class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                    <h2 class="py-3">Ajouter une catégorie à une vidéo</h2>
+                    <div class="mb-3 d-flex gap-2">
+                        <input type="search" class="form-control" placeholder="Id de la vidéo*">
+                        <input class="mt-3" type="search" class="form-control" placeholder="Id de la catégorie*">
+                    </div>
+                    <button type="submit" class="btn mb-3 w-50">Ajouter la catégorie</button>
+                </form>
+            </div>
+            <div>
+                <!-- Liste des vidéos par catégorie -->
+                <form class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
                     <h2 class="py-3">Liste des vidéos par catégorie</h2>
                     <div class="mb-3 d-flex gap-2">
-                        <input formControlName="code" type="search" class="form-control" placeholder="Id de la catégorie">
-                        <input class="mt-3" formControlName="code" type="search" class="form-control" placeholder='Faire un menu déroulant "catégorie"'>
+                        <input type="search" class="form-control" placeholder="Id de la catégorie">
+                        <input class="mt-3" type="search" class="form-control"
+                            placeholder='Faire un menu déroulant "catégorie"'>
                     </div>
                     <button type="submit" class="btn mb-3 w-50">Rechercher la liste catégorie</button>
                 </form>
             </div>
             <div>
-                <!-- FORM SEARCH USER -->
-                <form  class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                <!-- Liste des vidéos par type (privé / public) -->
+                <form class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
                     <h2 class="py-3">Liste des vidéos par type (privé / public)</h2>
                     <div class="mb-3 d-flex gap-2">
-                        <input formControlName="code" type="search" class="form-control" placeholder="type">
-                        <input class="mt-3" formControlName="code" type="search" class="form-control" placeholder='Faire un menu déroulant "Type"'>
+                        <input type="search" class="form-control" placeholder="type">
+                        <input class="mt-3" type="search" class="form-control"
+                            placeholder='Faire un menu déroulant "Type"'>
                     </div>
                     <button type="submit" class="btn mb-3 w-50">Rechercher la liste par type</button>
                 </form>
@@ -78,31 +93,33 @@
     </div>
 
     <!-- RESULTAT -->
-    <table class="w-100 text-center mb-5 mx-auto"> 
-        <tr class=""> 
-            <th class="">Id</th> 
-            <th>Titre</th> 
-            <th>Description</th> 
-            <th>Date de publication</th> 
-            <th>Type</th> 
-            <th>Teaser</th> 
-            <th>Catégorie</th> 
-            <th>Modifier</th> 
-            <th>Supprimer</th> 
-        </tr> 
-        <tr> 
-            <td></td> 
-            <td></td> 
-            <td></td> 
-            <td></td> 
-            <td></td> 
-            <td></td> 
-            <td></td> 
+    <table class="w-100 text-center mb-5 mx-auto">
+        <tr class="">
+            <th class="w-auto">Id</th>
+            <th class="w-auto">Titre</th>
+            <th class="w-auto">Description</th>
+            <th class="w-auto">Date de publication</th>
+            <th class="w-auto">Lien URL</th>
+            <th class="w-auto">Type</th>
+            <th class="w-auto">Teaser</th>
+            <th class="w-auto">Catégorie</th>
+            <th class="w-auto">Modifier</th>
+            <th class="w-auto">Supprimer</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td> <a href=""><i class="fa-solid fa-pen"></i></a></td>
             <td> <a href=""><i class="fa-solid fa-trash-can"></i></a></td>
-        </tr> 
-    </table> 
-    
+        </tr>
+    </table>
+
     <!-- MODIFIER LA VIDEO -->
     <form class="p-5 mb-5 w-75 mx-auto">
         <h2 class="py-3">Modifier la vidéo</h2>
@@ -131,10 +148,11 @@
             </div>
         </div>
         <div class="mb-3">
-            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Titre*" required>
-            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
-            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Date de publication*" required>
-            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required>
+            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Titre*" required>
+            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
+            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Date de publication*" required>
+            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Lien URL*" required>
+            <!-- <input   type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required> -->
         </div>
         <button type="submit" class="btn mb-5">Modifier la vidéo</button>
         <p class="text-end">Champs obligatoires *</p>

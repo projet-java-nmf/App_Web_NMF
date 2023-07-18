@@ -45,7 +45,7 @@ export class EmailConfirmationComponent implements OnInit {
       }, (error) => {
         // let msg = error.error.message;
         // let status = error.status;
-        this.errorMsg = error.error.message;
+        this.errorMsg = error.message;
         console.log(JSON.stringify(error))
 
       }

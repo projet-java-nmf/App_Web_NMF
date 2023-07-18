@@ -2,32 +2,34 @@
 
     <h1 class="pb-4">Gestion des membres</h1>
 
+    <button class="btn">Exporter la liste des membres</button>
+
     <!-- TABLE USER -->
-    <h2 class="">Table User</h2>
+    <h2 class="mt-4">Table User</h2>
     <!-- RESULTAT -->
-    <table class="w-100 text-center mb-5 mx-auto"> 
-        <tr class=""> 
-            <th class="">Id</th> 
-            <th>Mme / M.</th> 
-            <th>Prénom</th> 
-            <th>Nom</th> 
-            <th>Email</th> 
-            <th>Rôle</th> 
-            <th>Modifier</th> 
-            <th>Supprimer</th> 
-        </tr> 
-        <tr> 
-            <td></td> 
-            <td></td> 
-            <td></td> 
-            <td></td> 
-            <td></td> 
-            <td></td> 
+    <table class="w-100 text-center mb-5 mx-auto">
+        <tr class="">
+            <th class="">Id</th>
+            <th class="w-auto">Mme / M.</th>
+            <th class="w-25">Prénom</th>
+            <th class="w-25">Nom</th>
+            <th class="w-25">Email</th>
+            <th class="w-auto">Rôle</th>
+            <th class="w-auto">Modifier</th>
+            <th class="w-auto">Supprimer</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td> <a href=""><i class="fa-solid fa-pen"></i></a></td>
             <td> <a href=""><i class="fa-solid fa-trash-can"></i></a></td>
-        </tr> 
-    </table> 
-    
+        </tr>
+    </table>
+
     <!-- MODIFIER LE COMPTE -->
     <form class="p-5 mb-5 w-50 mx-auto">
         <h2 class="py-3">Modifier le compte</h2>
@@ -56,11 +58,12 @@
             </div>
         </div>
         <div class="mb-3">
-            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Prénom*" required>
-            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*" required>
+            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Prénom*" required>
+            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*" required>
             <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Email*" disabled>
         </div>
-        <a routerLink="/email-confirmation/:email"><button type="submit" class="btn mb-5">Modifier le compte</button></a>
+        <a routerLink="/email-confirmation/:email"><button type="submit" class="btn mb-5">Modifier le
+                compte</button></a>
         <p class="text-end">Champs obligatoires *</p>
     </form>
 

@@ -30,7 +30,6 @@ addVideoToSectionForm : FormGroup = this.fb.group({
   }
 
   onSubmit (){
-    console.log(this.sectionForm.value);
     this.sectionService.createSection(this.sectionForm.value).subscribe(
       (response : any) => {
         // this.router.navigate(['app-admin-gestion-videos-table-video']);
@@ -43,7 +42,6 @@ addVideoToSectionForm : FormGroup = this.fb.group({
   addVideoById(){
     this.errorMsg = "";
     this.successMsg = "";
-    console.log(this.addVideoToSectionForm.value);
     this.sectionService.addVideoById(this.addVideoToSectionForm.value.idSection, this.addVideoToSectionForm.value.idVideo).subscribe(
       (response : any) => {
         this.successMsg = "Vidéo ajouté avec succès";

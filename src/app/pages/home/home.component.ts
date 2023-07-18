@@ -11,6 +11,7 @@ import { SectionService } from 'src/app/core/services/section.service';
 })
 export class HomeComponent implements OnInit {
  video: Video = {
+  id: 0,
    title: "Exemple",
    description: "blabla",
    linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
@@ -26,12 +27,14 @@ export class HomeComponent implements OnInit {
     name : "Sécurité informatique",
     description : "assets/img/security.jpg",
     videos: [
-      {title: "Exemple",
+      {id: 1,
+        title: "Exemple",
       description: "blabla",
       linkUrl: "https://www.google.fr",
       categories: ["action"],
       publicationDate: "22/12/2022"},
-      {title: "NANANA",
+      {id: 2,
+        title: "NANANA",
       description: "blabla",
       linkUrl: "https://www.google.fr",
       categories: ["Drame"],
@@ -42,12 +45,14 @@ export class HomeComponent implements OnInit {
     name : "Yoga Position",
     description : "assets/img/security.jpg",
     videos: [
-      {title: "Exemple",
+      {id: 3,
+        title: "Exemple",
       description: "blabla",
       linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
       categories: ["action"],
       publicationDate: "22/12/2022"},
-      {title: "NANANA",
+      {id: 4,
+        title: "NANANA",
       description: "blabla",
       linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
       categories: ["Drame"],

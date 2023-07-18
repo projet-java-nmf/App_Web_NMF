@@ -1,0 +1,10 @@
+.template1 {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .py-1 {
+    scroll-snap-align: start;
+  }
+  

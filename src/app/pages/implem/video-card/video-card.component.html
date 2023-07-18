@@ -11,9 +11,10 @@
           <iframe
             width="300"
             height="200"
-            [src]="convertToSafeUrl(video.linkUrl)"
+            [src]="convertToSafeUrl('' + video.linkUrl)"
             frameborder="0"
           ></iframe>
+
           <!-- <a routerLink="/user-favorites-list" class="text-end m-2 "><button type="submit" class="btn btn-danger">supprimer</button></a> -->
           <!-- VIDEO -->
           <!-- <video id="video" preload="">

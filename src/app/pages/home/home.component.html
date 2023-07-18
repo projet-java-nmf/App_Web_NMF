@@ -9,7 +9,11 @@
   <!-- <button class="btn btn-danger" (click)="logout()">déconnexion</button> -->
 </section>
 
-<div *ngFor="let section of sections" >
+<div *ngFor="let section of sections">
+  <div class="">
     <h2>{{ section.name }}</h2>
-  <app-section-video [listVideos]="section.videos"></app-section-video>
+  </div>
+  <div class="p-1">
+    <app-section-video [listVideos]="section.videos"></app-section-video>
+  </div>
 </div>

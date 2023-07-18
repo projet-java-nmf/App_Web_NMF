@@ -28,12 +28,12 @@ export class HomeComponent implements OnInit {
     videos: [
       {title: "Exemple",
       description: "blabla",
-      linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
+      linkUrl: "https://www.google.fr",
       categories: ["action"],
       publicationDate: "22/12/2022"},
       {title: "NANANA",
       description: "blabla",
-      linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
+      linkUrl: "https://www.google.fr",
       categories: ["Drame"],
       publicationDate: "22/12/2022"}
     ]
@@ -67,7 +67,6 @@ export class HomeComponent implements OnInit {
       (response : any) => {
         this.users = response;
       },(error) => {
-        console.log(JSON.stringify(error));
         this.errorMsg = error.message;
       }
     )
@@ -75,7 +74,6 @@ export class HomeComponent implements OnInit {
       (response : any) => {
         this.sections = response;
       },(error) => {
-        console.log(JSON.stringify(error));
         this.errorMsg = error.message;
       }
     )

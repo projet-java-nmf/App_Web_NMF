@@ -15,4 +15,14 @@ export class SectionService {
     return this.http.get(this.url+"sections")
 
   }
+
+  createSection(body : any): Observable<any>{
+    return this.http.post<any>(
+      this.url+"sections/create-section", body);
+  }
+
+  addVideoById(idSection : number, idVideo : number): Observable<any>{
+    return this.http.get(
+      this.url+"sections/add-video-to-section?idSection="+idSection+"&idVideo="+idVideo);
+  }
 }

@@ -25,5 +25,4 @@ export class CategoriesService {
     return this.http.get(
       this.url+"categories/by-name/name="+name);
   }
-
 }

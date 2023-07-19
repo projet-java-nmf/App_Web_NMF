@@ -12,17 +12,17 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class JwtInterceptorInterceptor implements HttpInterceptor {
 
   constructor(
-    private authService : AuthService
-  ) {}
+    private authService: AuthService
+  ) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const jwt = this.authService.getJwt();
 
-    if (jwt){
+    if (jwt) {
       request = request.clone({
-        setHeaders : {
-          Authorization : `Bearer ${jwt}`
-        } 
+        setHeaders: {
+          Authorization: `Bearer ${jwt}`
+        }
       })
     }
     return next.handle(request);

@@ -1,39 +1,20 @@
 <section class="p-3">
-  <h4 class="mx-3 text-decoration-underline">Détails de la vidéo</h4>
-  <div
-    class="template1 m-5 py-5 px-4 d-flex justify-content-center align-item-center"
-  >
-    <!-- {{ video.linkUrl }}
-  <iframe
-      width="300"
-      height="200"
-      src="https://www.youtube.com/embed/UKQcJUj8Bjs"
-      frameborder="0"
-    ></iframe> -->
-    <!-- TEMPLATE -->
-    <div class="p-3 borderCard">
-      <div class="d-flex justify-content-center align-item-center video-box">
-        <iframe
-          width="300"
-          height="300"
-          [src]="convertToSafeUrl('' + video.linkUrl)"
-          frameborder="0"
-        ></iframe>
-      </div>
-      <div class="ms-3 borderCard">
-        <div class="p-2">
-          <h3 class="mb-5">Titre : {{ video.title }}</h3>
-          <h5><strong>Description :</strong> {{ video.description }}</h5>
-          <h5>
-            <strong>Publié le : {{ video.publicationDate }}</strong>
-          </h5>
-          <p>
-            <strong *ngFor="let categorie of video.categories"
-              >Catégorie(s) : {{ categorie }}</strong
-            >
-          </p>
+    <h3 class="mx-3">TEMPLATE Card Vidéo en détail</h3>
+    <div class="template1 m-5 py-5 px-4">
+
+        <!-- TEMPLATE -->
+        <div class="d-flex  p-3 borderCard">
+            <div class="video-box "></div>
+            <div class="ms-3 borderCard">
+                <div class="p-2">
+                    <h3 class="mb-5">Titre :</h3>
+                    <p><strong>Description :</strong></p>
+                    <p><strong>Publié le :</strong></p>
+                    <p><strong>Catégorie(s) :</strong></p>
+                </div>
+            </div>
         </div>
-      </div>
+        
     </div>
-  </div>
+
 </section>

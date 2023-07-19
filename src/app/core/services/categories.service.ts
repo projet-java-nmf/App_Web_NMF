@@ -9,20 +9,46 @@ import { environment } from 'src/environments/environment';
 export class CategoriesService {
 
   constructor(private http : HttpClient) { }
+
   url = environment.apiUrl;
 
-  createCategory(body : any): Observable<any>{
+  // ADD UNE CATEGORIE
+  addCategory(body: any) : Observable<any>{
     return this.http.post<any>(
-      this.url+"categories/create-category", body);
+      this.url+"categories/create-category",
+      body
+    );
   }
 
-  getCategoryById(id : number): Observable<any>{
+  //GET TOUTES LES CATEGORIES
+  getAllCategory() : Observable<any>{
     return this.http.get(
-      this.url+"categories/"+id);
+      this.url+"categories",
+    );
   }
 
-  getCategoryByName(name : string): Observable<any>{
-    return this.http.get(
-      this.url+"categories/by-name/name="+name);
+  // GET UNE CATEGORIE
+  getCategoryById(body: any) : Observable<any>{
+    return this.http.put<any>(
+      this.url+"categories/{id}",
+      body
+    );
   }
+
+  // GET UNE CATEGORY PAR SON NOM => getCategoryByName(String Name)
+  getCategoryByName(body: any) : Observable<any>{
+    return this.http.put<any>(
+      this.url+"categories/by-name/{name}",
+      body
+    );
+  }
+
+  //MODIFIER LE NOM D'UNE CATEGORIE : updateVideoCategory()
+  updateVideoCategory(body: any) : Observable<any>{
+    return this.http.put<any>(
+      this.url+"categories/update-category",
+      body
+    );
+  }
+
 }

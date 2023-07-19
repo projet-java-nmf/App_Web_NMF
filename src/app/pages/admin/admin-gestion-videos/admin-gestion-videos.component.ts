@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { VideoService } from 'src/app/core/services/video.service';
 
@@ -9,11 +9,6 @@ import { VideoService } from 'src/app/core/services/video.service';
   styleUrls: ['./admin-gestion-videos.component.scss']
 })
 export class AdminGestionVideosComponent implements OnInit {
-  errorMsg : string = "";
-  constructor(private fb : FormBuilder,
-    private router : Router,
-    private videoService : VideoService
-    ) { }
 
   videos : Array<any> = [];
   video : Array<any> = [];
@@ -36,6 +31,11 @@ export class AdminGestionVideosComponent implements OnInit {
   errorMsg6 : string = "";
   successMsg6 : string = "";
 
+  constructor(
+    private fb : FormBuilder,
+    private router : Router,
+    private videoService : VideoService
+  ) { }
 
   ngOnInit(): void {
     //

@@ -41,8 +41,6 @@ import { AdminGestionRolesTableRoleComponent } from './pages/admin/admin-gestion
 import { VideoCardComponent } from './pages/implem/video-card/video-card.component';
 import { VideoDetailsCardComponent } from './pages/implem/video-details-card/video-details-card.component';
 import { SectionVideoComponent } from './pages/implem/section-video/section-video.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +78,6 @@ import { HeroComponent } from './hero/hero.component';
     VideoCardComponent,
     VideoDetailsCardComponent,
     SectionVideoComponent,
-    HeroComponent,
 
   ],
   imports: [
@@ -88,8 +85,7 @@ import { HeroComponent } from './hero/hero.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule,
-    BrowserAnimationsModule,
+    RouterModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorInterceptor, multi: true }

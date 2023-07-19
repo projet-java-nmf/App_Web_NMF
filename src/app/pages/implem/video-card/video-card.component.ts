@@ -1,6 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Video } from 'src/app/core/models/video';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-video-card',
@@ -8,24 +6,10 @@ import { Video } from 'src/app/core/models/video';
   styleUrls: ['./video-card.component.scss']
 })
 export class VideoCardComponent implements OnInit {
-  @Input() video : Video = {
-    title: "",
-    description: "",
-    linkUrl: "",
-    categories: [],
-    publicationDate: "",
-  }
-  showVideoDetails: boolean = false;
-  showVideo: boolean = true;
 
-  constructor(
-    private domSanitizer : DomSanitizer
-  ) { }
- 
+  constructor() { }
+
   ngOnInit(): void {
   }
 
-  convertToSafeUrl(url : string ){
-    return this.domSanitizer.bypassSecurityTrustResourceUrl(url);
-  }
 }

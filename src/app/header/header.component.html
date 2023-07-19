@@ -1,5 +1,7 @@
 <section class="">
+
   <nav class="navbar navbar-expand-lg justify-content-between p-3">
+
     <div class="d-flex justify-content-center">
       <a class="navbar-brand" routerLink="home">
         <img src="../assets/unsplash-photos-yoga/daily_yoga.jpg" alt="Logo" width="260" height="200"
@@ -8,10 +10,9 @@
     </div>
 
     <!-- <div *ngIf="errorMsg" class="alert alert-danger m-2">{{errorMsg}}</div> -->
-    <div *ngFor="let user of users">
-      <p>{{ user.email }}</p>
-    </div>
-
+    <!--   <div *ngFor="let user of users">
+      <p>{{user.email}}</p>
+    </div> -->
 
     <div class="text-center">
       <div class="d-flex justify-content-end">
@@ -23,33 +24,19 @@
               <i *ngIf="email==''" class="fa-solid fa-user iconConnect test"></i>
               <i *ngIf="email!=''" class="fa-solid fa-user-check iconConnect test"></i>
             </div>
-
             <div class="test  ">
               <a *ngIf="email==''"><button class="btn" (click)="navigateTo()">Se connecter</button></a>
               <p *ngIf="email!=''" class="test mt-3">Bonjour {{gender}} {{firstname}} {{email}} !</p>
             </div>
-            <a class=""
-              ><button class="btn danger" (click)="logout()">
-                Me déconnecter
-              </button></a
-            >
+            <a class=""><button class="btn danger" (click)="logout()">Me déconnecter</button></a>
             <!-- ICON LOG OUT -->
             <i class="fa-solid fa-right-from-bracket iconLogout"></i>
           </div>
-
-          <div class="d-flex gap-2">
-            <a routerLink="user-session/user-session-base">User-Session</a
-            ><br />
-            <a routerLink="admin-session/admin-session-base">Admin-Session</a
-            ><br />
-          </div>
-
         </div>
       </div>
     </div>
+
   </nav>
+
+
 </section>
-<section><app-hero></app-hero></section>
-
-
-

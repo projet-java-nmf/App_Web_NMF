@@ -1,290 +1,209 @@
 <section class="p-5">
   <h1 class="pb-4">Gestion des vidéos</h1>
 
-  <div class="mt-3 d-flex justify-content-center gap-5">
-    <form
-      [formGroup]="uploadForm"
-      (ngSubmit)="onSubmit()"
-      class="p-3 mb-5 w-50"
-    >
-      <h2 class="py-3">Créer une vidéo</h2>
-      <!-- RESPONSE ERROR MESSAGE -->
-      <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
-      <div class="d-flex gap-5 mt-3 mb-3">
+    <div class="mt-3 d-flex justify-content-center gap-5 ">
+
+        
+        <!-- CREATE VIDEO -->
+        <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" class="p-3 mb-5 w-50">
+
+            <h2 class="py-3">Créer une vidéo</h2>
+            <!-- RESPONSE ERROR MESSAGE -->
+            <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
+            <h5>Public / Privée</h5>
+            <div class="d-flex gap-5 mt-3 mb-3">
+                <div class="d-flex gap-2">
+                    <label for="public">Public</label>
+                    <input formControlName="private" type="radio" name="private" value="false">
+                </div>
+                <div class="d-flex gap-2">
+                    <label for="private">Privé</label>
+                    <input formControlName="private" type="radio" name="private" value="true">
+                </div>
+            </div>
+            <h5>Teaser</h5>
+            <div class="d-flex gap-5 mt-3 mb-3">
+                <div class="d-flex gap-2">
+                    <label for="hasTeaser">Non</label>
+                    <input formControlName="hasTeaser" type="radio" name="hasTeaser" value="false">
+                </div>
+                <div class="d-flex gap-2">
+                    <label for="hasTeaser">Oui</label>
+                    <input formControlName="hasTeaser" type="radio" name="hasTeaser" value="true">
+                </div>
+            </div>
+            <div class="mb-3">
+
+                <input type="text" formControlName="title"  class="form-control p-3 mb-3 w-75" placeholder="Titre*" required>
+                <input type="text" formControlName="description"  class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
+                <input type="date" formControlName="publicationDate" class="form-control p-3 mb-3 w-75" placeholder="Date de publication*" required>
+                <input type="text" formControlName="linkUrl" class="form-control p-3 mb-3 w-75" placeholder="Lien URL de la vidéo*" required>
+                <!-- <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required> -->
+            </div>
+            <button type="submit" class="btn mb-5">Créer la vidéo</button>
+            <div *ngIf="errorMsg1" class="alert alert-danger">{{ errorMsg1 }}</div>
+            <div *ngIf="successMsg1" class="alert alert-success">{{ successMsg1 }}</div>
+
+            <p class="text-end">Champs obligatoires *</p>
+        </form>
+
+        <div class="w-50">
+            <div>
+
+                <!-- GET VIDEO BY ID -->
+                <form [formGroup]="getVideoByIdForm" (ngSubmit)="onSubmit2()" class="p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                    <h2 class="py-3">Rechercher une vidéo</h2>
+                    <div class="mb-3 d-flex gap-2">
+                        <input formControlName="id" type="search" class="form-control" placeholder="Id de la vidéo">
+                        <!-- <input class="mt-3" formControlName="title" type="search" class="form-control" placeholder="ou son titre"> -->
+
+                    </div>
+                    <button type="submit" class="btn mb-3 w-50">Rechercher la vidéo</button>
+                    <div *ngIf="errorMsg2" class="alert alert-danger">{{ errorMsg2 }}</div>
+                    <div *ngIf="successMsg2" class="alert alert-success">{{ successMsg2 }}</div>
+                </form>
+            </div>
+            <div>
+
+                <!-- ADD CATEGORY TO VIDEO BY ID -->
+                <form [formGroup]="addCategoryToVideoByIdForm" (ngSubmit)="onSubmit3()" class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                    <h2 class="py-3">Ajouter une catégorie à une vidéo</h2>
+                    <div class="mb-3 d-flex gap-2">
+                        <input formControlName="videoId" type="search" class="form-control" placeholder="Id de la vidéo*">
+                        <input class="mt-3" formControlName="categoryId" type="search" class="form-control" placeholder="Id de la catégorie*">
+
+                    </div>
+                    <button type="submit" class="btn mb-3 w-50">Ajouter la catégorie à cette vidéo</button>
+                    <div *ngIf="errorMsg3" class="alert alert-danger">{{ errorMsg3 }}</div>
+                    <div *ngIf="successMsg3" class="alert alert-success">{{ successMsg3 }}</div>
+                </form>
+            </div>
+            <div>
+
+                <!-- GET VIDEOS BY CATEGORY -->
+                <form [formGroup]="getVideosByCategoryForm" (ngSubmit)="onSubmit4()" class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                    <h2 class="py-3">Liste des vidéos par catégorie</h2>
+                    <div class="mb-3 d-flex gap-2">
+                        <input formControlName="id" type="search" class="form-control" placeholder="Id de la catégorie">
+                        <!-- <input class="mt-3" formControlName="code" type="search" class="form-control" placeholder='Faire un menu déroulant "catégorie"'> -->
+
+                    </div>
+                    <button type="submit" class="btn mb-3 w-50">Rechercher les vidéos par catégorie</button>
+                    <div *ngIf="errorMsg4" class="alert alert-danger">{{ errorMsg4 }}</div>
+                    <div *ngIf="successMsg4" class="alert alert-success">{{ successMsg4 }}</div>
+                </form>
+            </div>
+            <div>
+
+                <!-- GET ALL PUBLIC VIDEOS -->
+                <form [formGroup]="getAllPublicVideosForm" (ngSubmit)="onSubmit5()" class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+                    <h2 class="py-3">Liste des vidéos par type (privé / public)</h2>
+                    <div class="mb-3 d-flex gap-2">
+                        <input formControlName="private" type="search" class="form-control" placeholder='"privé" ou "public" '>
+                        <!-- <input class="mt-3" formControlName="code" type="search" class="form-control" placeholder='Faire un menu déroulant "Type"'> -->
+
+                    </div>
+                    <button type="submit" class="btn mb-3 w-50">Rechercher les vidéos par type</button>
+                    <div *ngIf="errorMsg5" class="alert alert-danger">{{ errorMsg5 }}</div>
+                    <div *ngIf="successMsg5" class="alert alert-success">{{ successMsg5 }}</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULTAT -->
+
+    <table class="w-100 text-center mb-5 mx-auto"> 
+        <tr> 
+            <th class="w-auto">Id</th> 
+            <th class="w-auto">Titre</th> 
+            <th class="w-auto">Description</th> 
+            <th class="w-auto">Date de publication</th> 
+            <th class="w-auto">Lien URL</th> 
+            <th class="w-auto">Type</th> 
+            <th class="w-auto">Teaser</th> 
+            <th class="w-auto">Catégorie</th> 
+            <th class="w-auto">Modifier</th> 
+            <th class="w-auto">Supprimer</th> 
+        </tr> 
+        <tr> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td><i class="fa-solid fa-pen"></i></td>
+            <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr> 
+        <tr *ngFor="let video of videos"> 
+            <td>{{ video.id }}</td> 
+            <td>{{ video.title }}</td> 
+            <td>{{ video.description }}</td> 
+            <td>{{ video.publicationDate }}</td> 
+            <td>{{ video.linkUrl }}</td> 
+            <td>{{ video.private }}</td> 
+            <td>{{ video.hasTeaser }}</td> 
+            <td>{{ video.categories }}</td> 
+            <td><i class="fa-solid fa-pen"></i></td>
+            <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr> 
+        <tr *ngFor="let vid of video"> 
+            <td>{{ vid.id }}</td> 
+            <td>{{ vid.title }}</td> 
+            <td>{{ vid.description }}</td> 
+            <td>{{ vid.publicationDate }}</td> 
+            <td>{{ vid.linkUrl }}</td> 
+            <td>{{ vid.private }}</td> 
+            <td>{{ vid.hasTeaser }}</td> 
+            <td>{{ vid.categories }}</td> 
+            <td><i class="fa-solid fa-pen"></i></td>
+            <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr> 
+    </table> 
+    
+    <!-- UPDATE VIDEO -->
+    <form [formGroup]="updateVideoForm" (ngSubmit)="onSubmit6()" class="p-5 mb-5 w-50 mx-auto">
+        <h2 class="py-3">Modifier la vidéo</h2>
         <h5>Public / Privée</h5>
-        <div class="d-flex gap-2">
-          <label for="private">Public</label>
-          <input
-            type="radio"
-            name="private"
-            formControlName="private"
-            value="false"
-          />
-          <label for="private">Privé</label>
-          <input
-            type="radio"
-            name="private"
-            formControlName="private"
-            value="true"
-          />
+        <div class="d-flex gap-5 mt-3 mb-3">
+            <div class="d-flex gap-2">
+                <label for="public">Public</label>
+                <input formControlName="private" type="radio" name="private" value="false">
+            </div>
+            <div class="d-flex gap-2">
+                <label for="private">Privé</label>
+                <input formControlName="private" type="radio" name="private" value="true">
+            </div>
         </div>
-        <div class="d-flex gap-2">
-          <h5>Teaser</h5>
-          <label for="hasTeaser">Public</label>
-          <input
-            type="radio"
-            name="hasTeaser"
-            formControlName="hasTeaser"
-            value="false"
-          />
-
-          <label for="hasTeaser">Public</label>
-          <input
-            type="radio"
-            name="hasTeaser"
-            formControlName="hasTeaser"
-            value="true"
-          />
+        <h5>Teaser</h5>
+        <div class="d-flex gap-5 mt-3 mb-3">
+            <div class="d-flex gap-2">
+                <label for="hasTeaser">Non</label>
+                <input formControlName="hasTeaser" type="radio" name="hasTeaser" value="false">
+            </div>
+            <div class="d-flex gap-2">
+                <label for="hasTeaser">Oui</label>
+                <input formControlName="hasTeaser" type="radio" name="hasTeaser" value="true">
+            </div>
         </div>
-      </div>
-      <div class="mb-3">
-        <input
-          type="text"
-          formControlName="title"
-          class="form-control p-3 mb-3 w-75"
-          placeholder="Titre*"
-          required
-        />
-        <input
-          type="text"
-          formControlName="description"
-          class="form-control p-3 mb-3 w-75"
-          placeholder="Description*"
-          required
-        />
-        <input
-          type="date"
-          formControlName="publicationDate"
-          class="form-control p-3 mb-3 w-75"
-          placeholder="Date de publication*"
-          required
-        />
-        <input
-          type="text"
-          formControlName="linkUrl"
-          class="form-control p-3 mb-3 w-75"
-          placeholder="Lien URL de la vidéo*"
-          required
-        />
-        <!-- <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required> -->
-      </div>
+        <div class="mb-3">
+            <input type="text" formControlName="title"  class="form-control p-3 mb-3 w-75" placeholder="Titre*" required>
+            <input type="text" formControlName="description"  class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
+            <input type="date" formControlName="publicationDate" class="form-control p-3 mb-3 w-75" placeholder="Date de publication*" required>
+            <input type="text" formControlName="linkUrl" class="form-control p-3 mb-3 w-75" placeholder="Lien URL de la vidéo*" required>
+            <!-- <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required> -->
+        </div>
+        <button type="submit" class="btn mb-5">Modifier la vidéo</button>
+        <div *ngIf="errorMsg6" class="alert alert-danger">{{ errorMsg6 }}</div>
+        <div *ngIf="successMsg6" class="alert alert-success">{{ successMsg6 }}</div>
+        <!-- RESPONSE ERROR MESSAGE -->
+        <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
 
-      <button type="submit" class="btn mb-5">Créer la vidéo</button>
-
-      <p class="text-end">Champs obligatoires *</p>
+        <p class="text-end">Champs obligatoires *</p>
     </form>
 
-    <div class="w-50">
-      <div>
-        <!-- Rechercher une vidéo -->
-        <form
-          class="p-3 mb-4 mx-auto d-flex flex-column justify-content-center"
-        >
-          <h2 class="py-3">Rechercher une vidéo</h2>
-          <div class="mb-3 d-flex gap-2">
-            <input
-              formControlName="code"
-              type="search"
-              class="form-control"
-              placeholder="Id de la vidéo"
-            />
-            <input
-              class="mt-3"
-              formControlName="code"
-              type="search"
-              class="form-control"
-              placeholder="Titre"
-            />
-          </div>
-          <button type="submit" class="btn mb-3 w-50">
-            Rechercher la vidéo
-          </button>
-        </form>
-      </div>
-      <div>
-        <!-- FORM SEARCH USER -->
-        <form
-          class="p-3 mb-4 mx-auto d-flex flex-column justify-content-center"
-        >
-          <h2 class="py-3">Ajouter une catégorie à une vidéo</h2>
-          <div class="mb-3 d-flex gap-2">
-            <input
-              formControlName="code"
-              type="search"
-              class="form-control"
-              placeholder="Id de la vidéo*"
-            />
-            <input
-              class="mt-3"
-              formControlName="code"
-              type="search"
-              class="form-control"
-              placeholder="Id de la catégorie*"
-            />
-          </div>
-          <button type="submit" class="btn mb-3 w-50">
-            Ajouter la catégorie
-          </button>
-        </form>
-      </div>
-      <div>
-        <!-- Liste des vidéos par catégorie -->
-        <form
-          class="p-3 mb-4 mx-auto d-flex flex-column justify-content-center"
-        >
-          <h2 class="py-3">Liste des vidéos par catégorie</h2>
-          <div class="mb-3 d-flex gap-2">
-            <input
-              formControlName="code"
-              type="search"
-              class="form-control"
-              placeholder="Id de la catégorie"
-            />
-            <input
-              class="mt-3"
-              formControlName="code"
-              type="search"
-              class="form-control"
-              placeholder='Faire un menu déroulant "catégorie"'
-            />
-          </div>
-          <button type="submit" class="btn mb-3 w-50">
-            Rechercher la liste catégorie
-          </button>
-        </form>
-      </div>
-      <div>
-        <!-- Liste des vidéos par type (privé / public) -->
-        <form
-          class="p-3 mb-4 mx-auto d-flex flex-column justify-content-center"
-        >
-          <h2 class="py-3">Liste des vidéos par type (privé / public)</h2>
-          <div class="mb-3 d-flex gap-2">
-            <input
-              formControlName="code"
-              type="search"
-              class="form-control"
-              placeholder="type"
-            />
-            <input
-              class="mt-3"
-              formControlName="code"
-              type="search"
-              class="form-control"
-              placeholder='Faire un menu déroulant "Type"'
-            />
-          </div>
-          <button type="submit" class="btn mb-3 w-50">
-            Rechercher la liste par type
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
 
-  <!-- RESULTAT -->
-  <table class="w-100 text-center mb-5 mx-auto">
-    <tr class="">
-      <th class="w-auto">Id</th>
-      <th class="w-auto">Titre</th>
-      <th class="w-auto">Description</th>
-      <th class="w-auto">Date de publication</th>
-      <th class="w-auto">Lien URL</th>
-      <th class="w-auto">Type</th>
-      <th class="w-auto">Teaser</th>
-      <th class="w-auto">Catégorie</th>
-      <th class="w-auto">Modifier</th>
-      <th class="w-auto">Supprimer</th>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>
-        <a href=""><i class="fa-solid fa-pen"></i></a>
-      </td>
-      <td>
-        <a href=""><i class="fa-solid fa-trash-can"></i></a>
-      </td>
-    </tr>
-  </table>
-
-  <!-- MODIFIER LA VIDEO -->
-  <form class="p-5 mb-5 w-50 mx-auto">
-    <h2 class="py-3">Modifier la vidéo</h2>
-    <!-- RESPONSE ERROR MESSAGE -->
-    <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
-    <h4>Type</h4>
-    <div class="d-flex gap-5 mt-3 mb-3">
-      <div class="d-flex gap-2">
-        <input type="radio" name="type" value="privé" />
-        <label for="privé">Privé</label>
-      </div>
-      <div class="d-flex gap-2">
-        <input type="radio" name="type" value="public" />
-        <label for="public">Public</label>
-      </div>
-    </div>
-    <h4>Teaser</h4>
-    <div class="d-flex gap-5 mt-3 mb-3">
-      <div class="d-flex gap-2">
-        <input type="radio" name="teaser" value="oui" />
-        <label for="oui">Oui</label>
-      </div>
-      <div class="d-flex gap-2">
-        <input type="radio" name="teaser" value="non" />
-        <label for="non">Non</label>
-      </div>
-    </div>
-    <div class="mb-3">
-      <input
-        formControlName=""
-        type="text"
-        class="form-control p-3 mb-3 w-75"
-        placeholder="Titre*"
-        required
-      />
-      <input
-        formControlName=""
-        type="text"
-        class="form-control p-3 mb-3 w-75"
-        placeholder="Description*"
-        required
-      />
-      <input
-        formControlName=""
-        type="text"
-        class="form-control p-3 mb-3 w-75"
-        placeholder="Date de publication*"
-        required
-      />
-      <input
-        formControlName=""
-        type="text"
-        class="form-control p-3 mb-3 w-75"
-        placeholder="Lien URL*"
-        required
-      />
-      <!-- <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Faire un menu déroulant Catégorie" required> -->
-    </div>
-    <a routerLink=""
-      ><button type="submit" class="btn mb-5">Modifier la vidéo</button></a
-    >
-    <p class="text-end">Champs obligatoires *</p>
-  </form>
 </section>

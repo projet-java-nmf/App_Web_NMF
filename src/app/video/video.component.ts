@@ -13,7 +13,7 @@ export class VideoComponent implements OnInit {
   description: "",
   linkUrl: "",
   categories: [],
-  publicationDate: "",
+  publicationDate: ""
 }
   constructor() { }
 

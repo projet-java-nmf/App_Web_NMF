@@ -1,15 +1,31 @@
 <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" class="p-5 w-50">
-  <input type="text" formControlName="title" placeholder="Title" />
-  <input type="text" formControlName="description" placeholder="Description" />
+  <input
+    type="text"
+    formControlName="title"
+    class="form-control p-3 mb-3 w-75"
+    placeholder="Titre*"
+    required
+  />
+  <input
+    type="text"
+    formControlName="description"
+    class="form-control p-3 mb-3 w-75"
+    placeholder="Description*"
+    required
+  />
   <input
     type="text"
     formControlName="linkUrl"
-    placeholder="Lien Url de la video"
+    class="form-control p-3 mb-3 w-75"
+    placeholder="Lien URL de la vidéo*"
+    required
   />
   <input
     type="date"
     formControlName="publicationDate"
-    placeholder="publicationDate"
+    class="form-control p-3 mb-3 w-75"
+    placeholder="Date de publication*"
+    required
   />
   <input type="radio" name="privated" value="false" />
   <label for="privated">Privé</label>

@@ -1,11 +1,13 @@
-// import { Injectable } from "@angular/core";
+
+import { Injectable } from "@angular/core";
+import { Video } from "./video";
 
 // Injectable({
 //     providedIn: 'root'
 // })
 
 export interface Section {
-    name: string;
-    description: string;
-    listVideos: Array<any>;
+    name: String;
+    description: String;
+    videos: Array<Video>;
 }

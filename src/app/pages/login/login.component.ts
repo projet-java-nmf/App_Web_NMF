@@ -23,15 +23,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   onSubmit() {
     this.errorMsg = "";
-    console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(
-
       (response : any) => {
-
-        console.log(JSON.stringify(response));
         this.authService.setJwt(response.jwt);
         this.authService.setEmail(response.email);
         this.authService.setRoles(response.roles);

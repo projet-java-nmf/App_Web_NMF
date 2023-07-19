@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -12,38 +12,36 @@ export class VideoService {
 
   url = environment.apiUrl;
 
-  // ADD UNE VIDEO
-  upload(body: any) : Observable<any>{
+  // ADD VIDEO
+  upload(body: any) : Observable<HttpResponse<any>>{
     return this.http.post<any>(
       this.url+"videos/upload-video",
       body
     )
   }
 
-  // GET TOUTES LES VIDEOS
+  // GET ALL VIDEOS
   getAllVideos() : Observable<any>{
     return this.http.get(
       this.url+"videos"
       )
   }
 
-  // GET UNE VIDEO BY ID
-  getVideoById(body : any) : Observable<any>{
-    return this.http.post<any>(
-      this.url+"videos/{id}",
-      body
+  // GET VIDEO BY ID
+  getVideoById(id : number) : Observable<any>{
+    return this.http.get(
+      this.url+"videos/"+id
     );
   }
 
-  // SUPPRIMER UNE VIDEO
-  removeVideo(body : any) : Observable<any>{
-    return this.http.delete<any>(
-      this.url+"videos/remove",
-      body
+  // DELETE VIDEO
+  removeVideo(id : number) : Observable<any>{
+    return this.http.delete(
+      this.url+"videos/remove"+id
     );
   }
   
-  // MODIFIER UNE VIDEO
+  // UPDATE VIDEO
   updateVideo(body : any) : Observable<any>{
     return this.http.put<any>(
       this.url+"videos/update-video",
@@ -51,27 +49,24 @@ export class VideoService {
     );
   }
   
-  //GET TOUTES LES VIDEOS PUBLIC
-  getAllPublicVideos(body : any) : Observable<any>{
-    return this.http.post<any>(
-      this.url+"videos/public/{isPrivate}",
-      body
+  // GET ALL PUBLIC VIDEOS
+  getAllPublicVideos(isPrivate : string) : Observable<any>{
+    return this.http.get(
+      this.url+"videos/public/"+isPrivate
     );
   }
   
   // ADD CATEGORY TO VIDEO BY Id
-  addCategoryToVideoById(body : any) : Observable<any>{
-    return this.http.post<any>(
-      this.url+"videos/add-category",
-      body
+  addCategoryToVideoById(videoId : number, categoryId : number) : Observable<any>{
+    return this.http.get(
+      this.url+"videos/add-category?videoId="+videoId+"&categoryId="+categoryId
     );
   }
     
   // GET VIDEOS BY CATEGORY
-  getVideosByCategory(body : any) : Observable<any>{
-    return this.http.post<any>(
-      this.url+"videos/by-category/{idCategory}",
-      body
+  getVideosByCategory(id: number) : Observable<any>{
+    return this.http.get<any>(
+      this.url+"videos/by-category/"+id
     );
   }
 

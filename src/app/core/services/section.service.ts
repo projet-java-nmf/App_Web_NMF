@@ -28,10 +28,9 @@ export class SectionService {
   }
 
   // GET A SECTION BY ID
-  getSectionById(body: any) : Observable<any>{
-    return this.http.post<any>(
-      this.url+"sections/{id}",
-      body
+  getSectionById(id: number) : Observable<any>{
+    return this.http.get<any>(
+      this.url+"sections/"+id
     );
   }
 
@@ -52,18 +51,21 @@ export class SectionService {
   }
 
   // ADD A VIDEO BY ID
-  addVideoToSectionById(body: any) : Observable<any>{
-    return this.http.post<any>(
-      this.url+"sections/add-video-to-section",
-      body
-    );
+  // addVideoToSectionById(body: any) : Observable<any>{
+  //   return this.http.post<any>(
+  //     this.url+"sections/add-video-to-section",
+  //     body
+  //   );
+  // }
+  addVideoById(idSection : number, idVideo : number): Observable<any>{
+    return this.http.get(
+      this.url+"sections/add-video-to-section?idSection="+idSection+"&idVideo="+idVideo);
   }
 
   // DELETE A VIDEO BY ID
-  removeVideoToSection(body: any) : Observable<any>{
-    return this.http.delete<any>(
-      this.url+"sections/remove-video-to-section",
-      body
+  removeVideoToSection(idSection : number, idVideo : number): Observable<any>{
+    return this.http.delete(
+      this.url+"sections/remove-video-to-section?idSection=" + idSection + "&idVideo=" + idVideo
     );
   }
 

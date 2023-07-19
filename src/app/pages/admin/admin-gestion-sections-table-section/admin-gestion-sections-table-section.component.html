@@ -13,26 +13,27 @@
             <th class="w-25">Modifier</th> 
             <th class="w-25">Supprimer</th> 
         </tr> 
-        <tr> 
-            <td></td> 
-            <td></td> 
-            <td></td>  
-            <td> <a href=""><i class="fa-solid fa-pen"></i></a></td>
-            <td> <a href=""><i class="fa-solid fa-trash-can"></i></a></td>
+        <tr *ngFor="let section of sections"> 
+            <td>{{ section.id }}</td> 
+            <td>{{ section.name }}</td> 
+            <td>{{ section.description }}</td>  
+            <td><i class="fa-solid fa-pen"></i></td>
+            <td><i class="fa-solid fa-trash-can"></i></td>
         </tr> 
     </table> 
     
-    <!-- MODIFIER LA SECTION -->
+    <!-- UPDATE SECTION -->
     <form class="p-5 mb-5 w-50 mx-auto">
         <h2 class="py-3">Modifier la section</h2>
         <!-- RESPONSE ERROR MESSAGE -->
         <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
-
         <div class="mb-3">
-            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*" required>
-            <input formControlName="" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
+            <input formControlName="name" type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*">
+            <input formControlName="description" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*">
         </div>
-        <a routerLink=""><button type="submit" class="btn mb-5">Modifier la section</button></a>
+        <button type="submit" class="btn mb-5">Modifier la section</button>
+        <div *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</div>
+        <div *ngIf="successMsg" class="alert alert-success">{{ successMsg }}</div>
         <p class="text-end">Champs obligatoires *</p>
     </form>
 

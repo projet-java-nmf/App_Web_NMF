@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Video } from 'src/app/core/models/video';
 import { VideoService } from 'src/app/core/services/video.service';
 
 @Component({
@@ -10,19 +9,27 @@ import { VideoService } from 'src/app/core/services/video.service';
   styleUrls: ['./admin-gestion-videos-table-video.component.scss']
 })
 export class AdminGestionVideosTableVideoComponent implements OnInit {
-  videosList: Video[] = [];
-  errorMsg : string = "";
+  videos : Array<any> = [];
+  video : Array<any> = [];
 
-  constructor(private fb : FormBuilder,
+  errorMsg : string = "";
+  successMsg : string = "";
+
+  constructor(
+    private fb : FormBuilder,
     private router : Router,
-    private videoService : VideoService) { }
+    private videoService : VideoService
+  ) { }
 
   ngOnInit(): void {
     this.videoService.getAllVideos().subscribe(
-      response =>{
-        this.videosList = response;
+      (response : any) => {
+        this.videos = response;
+      }, (error) => {
+        console.log(JSON.stringify(error))
+        this.errorMsg = error.message;
       }
-    );
+    )
   }
 
 }

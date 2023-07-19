@@ -14,7 +14,6 @@ export class VideoComponent implements OnInit {
   linkUrl: "",
   categories: [],
   publicationDate: "",
-  id: 0
 }
   constructor() { }
 

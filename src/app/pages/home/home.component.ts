@@ -11,7 +11,6 @@ import { SectionService } from 'src/app/core/services/section.service';
 })
 export class HomeComponent implements OnInit {
  video: Video = {
-  id: 0,
    title: "Exemple",
    description: "blabla",
    linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
@@ -23,42 +22,42 @@ export class HomeComponent implements OnInit {
  errorMsg : string = "";
 
  sections : Array<Section> = [
-  {
-    name : "Sécurité informatique",
-    description : "assets/img/security.jpg",
-    videos: [
-      {id: 1,
-        title: "Exemple",
-      description: "blabla",
-      linkUrl: "https://www.google.fr",
-      categories: ["action"],
-      publicationDate: "22/12/2022"},
-      {id: 2,
-        title: "NANANA",
-      description: "blabla",
-      linkUrl: "https://www.google.fr",
-      categories: ["Drame"],
-      publicationDate: "22/12/2022"}
-    ]
-  },
-  {
-    name : "Yoga Position",
-    description : "assets/img/security.jpg",
-    videos: [
-      {id: 3,
-        title: "Exemple",
-      description: "blabla",
-      linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
-      categories: ["action"],
-      publicationDate: "22/12/2022"},
-      {id: 4,
-        title: "NANANA",
-      description: "blabla",
-      linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
-      categories: ["Drame"],
-      publicationDate: "22/12/2022"}
-    ]
-  }
+  // {
+  //   name : "Sécurité informatique",
+  //   description : "assets/img/security.jpg",
+  //   videos: [
+  //     {
+  //       title: "Exemple",
+  //     description: "blabla",
+  //     linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
+  //     categories: ["action"],
+  //     publicationDate: "22/12/2022"},
+  //     {
+  //       title: "NANANA",
+  //     description: "blabla",
+  //     linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
+  //     categories: ["Drame"],
+  //     publicationDate: "22/12/2022"}
+  //   ]
+  // },
+  // {
+  //   name : "Yoga Position",
+  //   description : "assets/img/security.jpg",
+  //   videos: [
+  //     {
+  //       title: "Exemple",
+  //     description: "blabla",
+  //     linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
+  //     categories: ["action"],
+  //     publicationDate: "22/12/2022"},
+  //     {
+  //       title: "NANANA",
+  //     description: "blabla",
+  //     linkUrl: "https://www.youtube.com/embed/CsP36lUNPT0",
+  //     categories: ["Drame"],
+  //     publicationDate: "22/12/2022"}
+  //   ]
+  // }
  ];
 
   constructor(
@@ -77,6 +76,7 @@ export class HomeComponent implements OnInit {
     )
     this.sectionService.getAllSections().subscribe(
       (response : any) => {
+        console.log(JSON.stringify(response));
         this.sections = response;
       },(error) => {
         this.errorMsg = error.message;

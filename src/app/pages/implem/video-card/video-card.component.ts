@@ -9,7 +9,6 @@ import { Video } from 'src/app/core/models/video';
 })
 export class VideoCardComponent implements OnInit {
   @Input() video : Video = {
-    id: 0,
     title: "",
     description: "",
     linkUrl: "",

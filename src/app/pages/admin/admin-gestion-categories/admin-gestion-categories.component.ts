@@ -37,9 +37,8 @@ export class AdminGestionCategoriesComponent implements OnInit {
   }
 
   getCategoryById(){
-    const id = this.searchCategoryByIdForm.value.id;
-    console.log(id);
-    this.categoriesService.getCategoryById(id).subscribe(
+    console.log(this.searchCategoryByIdForm.value.id);
+    this.categoriesService.getCategoryById(this.searchCategoryByIdForm.value.id).subscribe(
       (response : any) =>{
         this.successMsg = "Catégorie trouvé !";
       },(error) => {
@@ -49,8 +48,8 @@ export class AdminGestionCategoriesComponent implements OnInit {
   }
 
   getCategoryByName(){
-    const name = this.searchCategoryByNameForm.value.name;
-    this.categoriesService.getCategoryByName(name).subscribe(
+    console.log(this.searchCategoryByIdForm.value.name);
+    this.categoriesService.getCategoryByName(this.searchCategoryByNameForm.value.name).subscribe(
       (response : any) =>{
         this.successMsg = "Catégorie trouvé !";
       },(error) => {

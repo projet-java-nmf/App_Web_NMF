@@ -18,7 +18,7 @@ export class CategoriesService {
 
   getCategoryById(id : number): Observable<any>{
     return this.http.get(
-      this.url+"categories/id="+id);
+      this.url+"categories/"+id);
   }
 
   getCategoryByName(name : string): Observable<any>{

@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit (){
-    console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(
       (response : any) => {
         console.log(JSON.stringify(response));

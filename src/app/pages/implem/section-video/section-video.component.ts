@@ -9,9 +9,9 @@ import { Video } from 'src/app/core/models/video';
 export class SectionVideoComponent implements OnInit {
   @Input()
   listVideos: Array<Video> = [];
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

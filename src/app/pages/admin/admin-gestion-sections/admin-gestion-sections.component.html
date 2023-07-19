@@ -5,8 +5,10 @@
     <div>
       <form [formGroup]="sectionForm" (ngSubmit)="onSubmit()" class="p-3 mb-4">
         <h2 class="py-3">Créer une section</h2>
-        <!-- RESPONSE ERROR MESSAGE -->
-        <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
+        <div *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</div>
+        <div *ngIf="successMsg" class="alert alert-success">
+          {{ successMsg }}
+        </div>
         <div class="mb-3">
           <input
             formControlName="name"
@@ -45,7 +47,7 @@
         <button type="submit" class="btn mb-3 w-50">
           Rechercher la section
         </button>
-      </form> 
+      </form>
     </div>
     <div class="w-50">
       <!-- FORM SEARCH SECTION -->

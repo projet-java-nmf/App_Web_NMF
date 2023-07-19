@@ -9,34 +9,66 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
-  loginForm : FormGroup = this.fb.group({
-    email : ['', []],
-    password : ['', []]
+
+  loginForm: FormGroup = this.fb.group({
+    email: ['msykhanou@yahoo.fr', []],
+    password: ['azerty', []]
   })
-  errorMsg : string = "";
+  errorMsg: string = "";
   constructor(
-    private fb : FormBuilder,
-    private router : Router,
-    private authService : AuthService
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit (){
+  onSubmit() {
+    this.errorMsg = "";
     console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(
+
       (response : any) => {
+
         console.log(JSON.stringify(response));
         this.authService.setJwt(response.jwt);
         this.authService.setEmail(response.email);
         this.authService.setRoles(response.roles);
-        this.router.navigate(['home']);
-      },(error) => {
-        this.errorMsg = error.error.message;
+        this.authService.setGender(response.gender);
+        this.authService.setFirstname(response.firstname);
+        // this.router.navigate(['home']);
+        if (response.roles.includes('ADMIN')) {
+          console.log("1");
+          this.router.navigate(['admin-session']);
+        } else {
+          if (response.roles.includes('USER')) {
+            console.log("2");
+            this.router.navigate(['user-session']);
+            //this.router.navigate(['login']);
+          } else {
+            console.log("3");
+            this.router.navigate(['home']);
+          }
+        }
+        //  console.log('totot ' + response.roles.includes('ADMIN'));
+        //  console.log('totot2 ' + response.roles.includes('USER'));
+      }, (error) => {
+        this.errorMsg = error.message;
       }
     )
   }
+
+  typeForPassword: string = "password";
+
+  seePassword() {
+    if (this.typeForPassword === "password") {
+      this.typeForPassword = "text";
+    } else {
+      this.typeForPassword = "password";
+    }
+
+  }
+
 
 }

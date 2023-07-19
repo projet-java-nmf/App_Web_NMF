@@ -5,6 +5,7 @@
     <!-- TABLE SECTION -->
     <h2 class="">Table Section</h2>
     <!-- RESULTAT -->
+
     <table class="w-100 text-center mb-5 mx-auto"> 
         <tr class=""> 
             <th class="w-25">Id</th> 
@@ -28,8 +29,10 @@
         <!-- RESPONSE ERROR MESSAGE -->
         <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
         <div class="mb-3">
+
             <input formControlName="name" type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*">
             <input formControlName="description" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*">
+
         </div>
         <button type="submit" class="btn mb-5">Modifier la section</button>
         <div *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</div>

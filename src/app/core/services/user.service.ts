@@ -8,9 +8,18 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   url = environment.apiUrl;
+
+
+  setMe(body: any): Observable<any> {
+    return this.http.put<any>(
+      this.url + "users/me",
+      body
+    )
+  }
+
 
   //GET ALL USERS
   getAllUsers() : Observable<any>{

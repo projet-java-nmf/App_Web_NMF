@@ -5,82 +5,117 @@
     <div class="mt-3 d-flex justify-content-center gap-5 ">
 
         <div>
-            <form class="p-3 mb-4 ">
+            <!-- CREATE SECTION -->
+            <!-- RESPONSE ERROR MESSAGE -->
+            <form [formGroup]="sectionForm" (ngSubmit)="onSubmit()" class="p-3 mb-4 ">
                 <h2 class="py-3">Créer une section</h2>
-                <!-- RESPONSE ERROR MESSAGE -->
                 <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
                 <div class="mb-3">
-                    <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*" required>
-                    <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
+
+                    <input formControlName="name" type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*" required>
+                    <input formControlName="description" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
                 </div>
-                <a routerLink="/email-confirmation/:email"><button type="submit" class="btn mb-5">Créer la
-                        section</button></a>
+                <button type="submit" class="btn mb-5">Créer la section</button>
+                <div *ngIf="errorMsg1" class="alert alert-danger">{{ errorMsg1 }}</div>
+                <div *ngIf="successMsg1" class="alert alert-success">{{ successMsg1 }}</div>
                 <p class="text-end">Champs obligatoires *</p>
             </form>
-            <!-- FORM SEARCH SECTION -->
-            <form class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+
+            <!-- GET SECTION BY ID / NAME -->
+            <form [formGroup]="getSectionByIdForm" (ngSubmit)="onSubmit2()" class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
                 <h2 class="py-3">Rechercher une section</h2>
                 <div class="mb-3 d-flex gap-2">
-                    <input type="search" class="form-control" placeholder="Id de la section">
-                    <input class="mt-3" type="search" class="form-control" placeholder="Nom">
+                    <input formControlName="id" type="search" class="form-control" placeholder="Id de la section">
+                    <input class="mt-3" formControlName="name" type="search" class="form-control" placeholder="ou Nom de la section">
                 </div>
                 <button type="submit" class="btn mb-3 w-50">Rechercher la section</button>
+                <div *ngIf="errorMsg2" class="alert alert-danger">{{ errorMsg2 }}</div>
+                <div *ngIf="successMsg2" class="alert alert-success">{{ successMsg2 }}</div>
             </form>
         </div>
+
         <div class="w-50">
-            <!-- FORM SEARCH SECTION -->
-            <form class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+
+            <!-- ADD VIDEO BY ID TO SECTION -->
+            <form [formGroup]="addVideoToSectionForm" (ngSubmit)="addVideoById()" class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
                 <h2 class="py-3">Ajouter une vidéo à une section</h2>
                 <div class="mb-3 d-flex gap-2">
-                    <input type="search" class="form-control" placeholder="Id de la section*" required>
-                    <input class="mt-3" type="search" class="form-control" placeholder='Id de la vidéo*' required>
+                    <input formControlName="idSection" type="search" class="form-control" placeholder="Id de la section*">
+                    <input class="mt-3" formControlName="idVideo" type="search" class="form-control" placeholder='Id de la vidéo*'>
+
                 </div>
-                <button type="submit" class="btn mb-3 w-50">Rechercher la liste catégorie</button>
+                <button type="submit" class="btn mb-3 w-50">Ajouter la vidéo à la section</button>
+                <div *ngIf="errorMsg3" class="alert alert-danger">{{ errorMsg3 }}</div>
+                <div *ngIf="successMsg3" class="alert alert-success">{{ successMsg3 }}</div>
                 <p class="text-end">Champs obligatoires *</p>
             </form>
-            <!-- FORM SEARCH SECTION -->
-            <form class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
+
+
+            <!-- DELETE VIDEO TO SECTION-->
+            <form [formGroup]="deleteVideoOfSectionForm" (ngSubmit)="onSubmit4()" class=" p-3 mb-4 mx-auto d-flex flex-column justify-content-center">
                 <h2 class="py-3">Supprimer une vidéo d'une section</h2>
                 <div class="mb-3 d-flex gap-2">
-                    <input type="search" class="form-control" placeholder="Id de la section*">
-                    <input class="mt-3" type="search" class="form-control" placeholder='Id de la vidéo*'>
+                    <input formControlName="idSection" type="search" class="form-control" placeholder="Id de la section*">
+                    <input class="mt-3" formControlName="idVideo" type="search" class="form-control" placeholder='Id de la vidéo*'>
+
                 </div>
-                <button type="submit" class="btn mb-3 w-50">Rechercher la liste par type</button>
+                <button type="submit" class="btn mb-3 w-50">Supprimer la vidéo dans la section</button>
+                <div *ngIf="errorMsg4" class="alert alert-danger">{{ errorMsg4 }}</div>
+                <div *ngIf="successMsg4" class="alert alert-success">{{ successMsg4 }}</div>
                 <p class="text-end">Champs obligatoires *</p>
             </form>
         </div>
+
     </div>
 
     <!-- TABLE SECTION -->
     <h2 class="">Table Section</h2>
     <!-- RESULTAT -->
-    <table class="w-100 text-center mb-5 mx-auto">
-        <tr class="">
-            <th class="w-25">Id</th>
-            <th class="w-25">Nom</th>
-            <th class="w-50">Description</th>
-            <th class="w-25">Modifier</th>
-            <th class="w-25">Supprimer</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td> <a href=""><i class="fa-solid fa-pen"></i></a></td>
-            <td> <a href=""><i class="fa-solid fa-trash-can"></i></a></td>
-        </tr>
-    </table>
 
-    <!-- MODIFIER LA SECTION -->
-    <form class="p-5 mb-5 w-50 mx-auto">
-        <h2 class="py-3">Modifier la section 'nom-section'</h2>
+    <table class="w-100 text-center mb-5 mx-auto"> 
+        <tr class=""> 
+            <th class="w-25">Id</th> 
+            <th class="w-25">Nom</th> 
+            <th class="w-50">Description</th> 
+            <th class="w-25">Modifier</th> 
+            <th class="w-25">Supprimer</th> 
+        </tr> 
+        <tr> 
+            <td></td> 
+            <td></td> 
+            <td></td>  
+            <td><i class="fa-solid fa-pen"></i></td>
+            <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr> 
+        <tr *ngFor="let section of sections"> 
+            <td>{{ section.id }}</td> 
+            <td>{{ section.name }}</td> 
+            <td>{{ section.description }}</td>  
+            <td><i class="fa-solid fa-pen"></i></td>
+            <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr> 
+        <tr *ngFor="let sec of section"> 
+            <td>{{ sec.id }}</td> 
+            <td>{{ sec.name }}</td> 
+            <td>{{ sec.description }}</td>  
+            <td><i class="fa-solid fa-pen"></i></td>
+            <td><i class="fa-solid fa-trash-can"></i></td>
+        </tr> 
+    </table> 
+    
+    <!-- UPDATE SECTION -->
+    <form [formGroup]="updateSectionForm" (ngSubmit)="onSubmit5()" class="p-5 mb-5 w-50 mx-auto">
+        <h2 class="py-3">Modifier la section</h2>
         <!-- RESPONSE ERROR MESSAGE -->
         <!-- <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div> -->
         <div class="mb-3">
-            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*" required>
-            <input type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*" required>
+            <input formControlName="name" type="text" class="form-control p-3 mb-3 w-75" placeholder="Nom*">
+            <input formControlName="description" type="text" class="form-control p-3 mb-3 w-75" placeholder="Description*">
+
         </div>
-        <a routerLink=""><button type="submit" class="btn mb-5">Modifier la section</button></a>
+        <button type="submit" class="btn mb-5">Modifier la section</button>
+        <div *ngIf="errorMsg5" class="alert alert-danger">{{ errorMsg5 }}</div>
+        <div *ngIf="successMsg5" class="alert alert-success">{{ successMsg5 }}</div>
         <p class="text-end">Champs obligatoires *</p>
     </form>
 

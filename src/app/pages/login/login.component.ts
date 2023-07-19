@@ -28,7 +28,9 @@ export class LoginComponent implements OnInit {
     this.errorMsg = "";
     console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(
-      (response: any) => {
+
+      (response : any) => {
+
         console.log(JSON.stringify(response));
         this.authService.setJwt(response.jwt);
         this.authService.setEmail(response.email);

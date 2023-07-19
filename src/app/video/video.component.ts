@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Video } from '../core/models/video';
+import { SectionComponent } from '../section/section.component';
 
 @Component({
   selector: 'app-video',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video.component.scss']
 })
 export class VideoComponent implements OnInit {
-
+@Input() video : Video = {
+  title: "",
+  description: "",
+  linkUrl: "",
+  categories: [],
+  publicationDate: ""
+}
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

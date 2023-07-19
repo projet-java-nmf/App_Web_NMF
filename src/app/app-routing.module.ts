@@ -45,6 +45,13 @@ import { AdminGestionCategoriesTableCategoryComponent } from './pages/admin/admi
 // GESTION SECTIONS
 import { AdminGestionSectionsComponent } from './pages/admin/admin-gestion-sections/admin-gestion-sections.component';
 import { AdminGestionSectionsTableSectionComponent } from './pages/admin/admin-gestion-sections-table-section/admin-gestion-sections-table-section.component';
+import { UploadVideoComponent } from './upload-video/upload-video.component';
+import { SectionComponent } from './section/section.component';
+
+// IMPLEM VIDEO & SECTION
+import { VideoCardComponent } from './pages/implem/video-card/video-card.component';
+import { VideoDetailsCardComponent } from './pages/implem/video-details-card/video-details-card.component';
+import { SectionVideoComponent } from './pages/implem/section-video/section-video.component';
 
 
 const routes: Routes = [
@@ -62,24 +69,36 @@ const routes: Routes = [
   {path : "reset-password/:token", component : ResetPasswordComponent },
   
   // USER
-  {path : "user-session", component : UserSessionComponent },
-  {path : "user-session-base", component : UserSessionBaseComponent},
-  {path : "user-info", component : UserInfoComponent},
-  {path : "if-favorite-list-is-empty", component : IfFavoriteListIsEmptyComponent},
-  {path : "user-favorites-list", component : UserFavoritesListComponent},
+  {path : "user-session", component : UserSessionComponent, children: [
+    {path : "user-session-base", component : UserSessionBaseComponent},
+    {path : "user-info", component : UserInfoComponent},
+    {path : "user-favorites-list", component : UserFavoritesListComponent},
+    {path : "if-favorite-list-is-empty", component : IfFavoriteListIsEmptyComponent},
+  ]
+  },
 
   // ADMIN
-  {path : "app-admin-session", component : AdminSessionComponent},
-  {path : "app-admin-gestion-users", component : AdminGestionUsersComponent},
-  {path : "app-admin-gestion-users-table-user", component : AdminGestionUsersTableUserComponent},
-  {path : "app-admin-gestion-roles", component : AdminGestionRolesComponent},
-  {path : "app-admin-gestion-roles-table-role", component : AdminGestionRolesTableRoleComponent},
-  {path : "app-admin-gestion-videos", component : AdminGestionVideosComponent},
-  {path : "app-admin-gestion-videos-table-video", component : AdminGestionVideosTableVideoComponent},
-  {path : "app-admin-gestion-sections", component : AdminGestionSectionsComponent},
-  {path : "app-admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
-  {path : "app-admin-gestion-categories", component : AdminGestionCategoriesComponent},
-  {path : "app-admin-gestion-categories-table-category", component : AdminGestionCategoriesTableCategoryComponent},
+  {path : "admin-session", component : AdminSessionComponent, children: [  
+    {path: "videos", component: UploadVideoComponent},
+    {path : "admin-session-base", component : UserSessionBaseComponent},
+    {path : "admin-info", component : UserInfoComponent},
+    {path : "admin-favorites-list", component : UserFavoritesListComponent},
+    {path : "admin-gestion-users", component : AdminGestionUsersComponent},
+    {path : "admin-gestion-users-table-user", component : AdminGestionUsersTableUserComponent},
+    {path : "admin-gestion-roles", component : AdminGestionRolesComponent},
+    {path : "admin-gestion-roles-table-role", component : AdminGestionRolesTableRoleComponent},
+    {path : "admin-gestion-videos", component : AdminGestionVideosComponent},
+    {path : "admin-gestion-videos-table-video", component : AdminGestionVideosTableVideoComponent},
+    {path : "admin-gestion-sections", component : AdminGestionSectionsComponent},
+    {path : "admin-gestion-sections-table-section", component : AdminGestionSectionsTableSectionComponent},
+    {path : "admin-gestion-categories", component : AdminGestionCategoriesComponent},
+    {path : "admin-gestion-categories-table-category", component : AdminGestionCategoriesTableCategoryComponent},
+
+    {path : "video-card", component : VideoCardComponent},
+    {path : "video-details-card", component : VideoDetailsCardComponent},
+    {path : "section-video", component : SectionVideoComponent},
+  ]
+},
 
   {path: "**", component: PageNotFoundComponent}
 ];

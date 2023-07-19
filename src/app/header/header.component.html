@@ -10,9 +10,9 @@
     </div>
 
     <!-- <div *ngIf="errorMsg" class="alert alert-danger m-2">{{errorMsg}}</div> -->
-    <div *ngFor="let user of users">
+    <!--   <div *ngFor="let user of users">
       <p>{{user.email}}</p>
-    </div>
+    </div> -->
 
     <div class="text-center">
       <div class="d-flex justify-content-end">
@@ -25,7 +25,7 @@
               <i *ngIf="email!=''" class="fa-solid fa-user-check iconConnect test"></i>
             </div>
             <div class="test  ">
-              <a><button class="btn" (click)="navigateTo()">Se connecter</button></a>
+              <a *ngIf="email==''"><button class="btn" (click)="navigateTo()">Se connecter</button></a>
               <p *ngIf="email!=''" class="test mt-3">Bonjour {{gender}} {{firstname}} {{email}} !</p>
             </div>
             <a class=""><button class="btn danger" (click)="logout()">Me déconnecter</button></a>
@@ -35,6 +35,8 @@
         </div>
       </div>
     </div>
+
   </nav>
+
 
 </section>

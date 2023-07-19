@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Video } from '../core/models/video';
 
 @Component({
   selector: 'app-section',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./section.component.scss']
 })
 export class SectionComponent implements OnInit {
-
+  @Input()
+  listVideos: Array<Video> = [];
   constructor() { }
 
   ngOnInit(): void {

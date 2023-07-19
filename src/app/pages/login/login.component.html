@@ -1,14 +1,14 @@
 <section class="m-5 d-flex">
-
     <div class="d-flex gap-5 mx-auto">
-
         <!-- FORM REGISTER -->
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="p-5 w-50">
             <h2 class="mb-3">Déjà Yogi Monkey ?</h2>
-            <p>Connectez-vous ici pour poursuivre votre expérience sur Daily Yogi !</p>
+            <p>
+                Connectez-vous ici pour poursuivre votre expérience sur Daily Yogi !
+            </p>
 
             <!-- RESPONSE ERROR MESSAGE -->
-            <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+            <div *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</div>
 
             <!-- INPUT -->
             <div class="mb-3">
@@ -28,7 +28,6 @@
                             <img *ngIf="typeForPassword==='text'" src="../../../assets/icons/eye-slash-solid.svg"
                                 alt="icon forgotten password">
                         </button>
-
                     </div>
                 </div>
             </div>
@@ -38,20 +37,17 @@
                 <a routerLink="/reset-password">Mot de passe oublié !</a>
             </div>
 
-            <!--  <a routerLink="/user-session"><button type="submit" class="btn">Se connecter</button></a>
-         -->
             <button type="submit" class="btn">Se connecter</button>
-
-
         </form>
 
         <!-- LINK TO REGISTER -->
         <div class="template1 p-5 w-50 d-flex flex-column justify-content-center">
             <h2>Nouveau Yogi Monkey ?</h2>
-            <p>Pour conserver vos vidéos favorites, vous pouvez compter sur votre compte !</p>
+            <p>
+                Pour conserver vos vidéos favorites, vous pouvez compter sur votre
+                compte !
+            </p>
             <a routerLink="/register"><button type="submit" class="btn">Créer mon compte</button></a>
         </div>
-
     </div>
-    qsdfqds
 </section>

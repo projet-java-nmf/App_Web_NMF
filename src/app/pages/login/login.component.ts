@@ -11,8 +11,8 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup = this.fb.group({
-    email: ['', []],
-    password: ['', []]
+    email: ['msykhanou@yahoo.fr', []],
+    password: ['azerty', []]
   })
   errorMsg: string = "";
   constructor(
@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(
       (response: any) => {
+        console.log(JSON.stringify(response));
         this.authService.setJwt(response.jwt);
         this.authService.setEmail(response.email);
         this.authService.setRoles(response.roles);
@@ -37,7 +38,7 @@ export class LoginComponent implements OnInit {
         // this.router.navigate(['home']);
         if (response.roles.includes('ADMIN')) {
           console.log("1");
-          this.router.navigate(['app-admin-session']);
+          this.router.navigate(['admin-session']);
         } else {
           if (response.roles.includes('USER')) {
             console.log("2");
@@ -46,15 +47,8 @@ export class LoginComponent implements OnInit {
           } else {
             console.log("3");
             this.router.navigate(['home']);
-
           }
-
         }
-
-
-
-
-
         //  console.log('totot ' + response.roles.includes('ADMIN'));
         //  console.log('totot2 ' + response.roles.includes('USER'));
       }, (error) => {
